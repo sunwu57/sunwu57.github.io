@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>typora+PicGo+LskyPro+Obsidian实现文章管理 | 子夜旅馆</title>
-  <meta name="keywords" content=" blog ">
-  <meta name="description" content="typora+PicGo+LskyPro+Obsidian实现文章管理 | 子夜旅馆">
+  <title>群晖进行DDNS解析 | 子夜旅馆</title>
+  <meta name="keywords" content=" 群晖 ">
+  <meta name="description" content="群晖进行DDNS解析 | 子夜旅馆">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;beta&#x2F;article&#x2F;1921363">
 <meta property="og:type" content="article">
@@ -518,11 +518,13 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-typora+PicGo+LskyPro+Obsidian实现文章管理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-群晖进行DDNS解析" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">typora+PicGo+LskyPro+Obsidian实现文章管理</h1>
+        <h1 class="article-title">群晖进行DDNS解析</h1>
     
     <div class="article-meta">
+        
+        <span class="top"><a>置顶</a></span>
         
         
         
@@ -538,19 +540,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">blog</a>
+            <a class="color3">群晖</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-03-29 12:58:08'>2023-03-23 22:37</time>
+            发布时间 : <time class="date" title='最后更新: 2023-05-07 21:19:19'>2023-05-07 21:18</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:328</span>
+        <span>字数:8</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -569,7 +571,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#typora-PicGo-LskyPro-github-Obsidian"><span class="toc-text">typora+PicGo+LskyPro(github)+Obsidian</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA"><span class="toc-text">搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="toc-text">图片上传的整体思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="toc-text">搭建流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%83%B3%E7%94%A8%E8%87%AA%E5%BB%BA%E7%9A%84%E5%9B%BE%E5%BA%8A%E5%8F%AF%E4%BB%A5%E6%8D%A2%E6%88%90github%E5%9B%BE%E5%BA%8A"><span class="toc-text">如果不想用自建的图床可以换成github图床</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -585,69 +587,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="typora-PicGo-LskyPro-github-Obsidian"><a href="#typora-PicGo-LskyPro-github-Obsidian" class="headerlink" title="typora+PicGo+LskyPro(github)+Obsidian"></a>typora+PicGo+LskyPro(github)+Obsidian</h1><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><ol>
-<li>typora是一个Markdown格式的编辑器</li>
-<li>PicGo是一个自动上传图片到图床的工具</li>
-<li>LskyPro是一个图床</li>
-<li>Obsidian是一个.md文档整理关联工具</li>
-</ol>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xbd_zc/article/details/129423825">Lsky Pro搭建</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.tqwba.com/x_d/jishu/1210032.html">Lskypro搭建</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2082694">Lsky Pro-V2-tocken获取</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33957967/article/details/124572413">typora自动上传图片</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">PicGo官网</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85">PicGo手册</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33957967/article/details/124572413">整体流程少一截</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xq4y1m7es">功能介绍</a></p>
-<h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><h2 id="图片上传的整体思路"><a href="#图片上传的整体思路" class="headerlink" title="图片上传的整体思路"></a>图片上传的整体思路</h2></li>
-<li><p>typora向本地的36677端口发送图片上传的请求</p>
-</li>
-<li><p>PicGo默认监听本地36677端口，并将监听的数据以接口的形式发送到，指定Lskypro所在的图床，返回一个链接</p>
-</li>
-</ol>
-<h2 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h2><ol>
-<li><p>下载并安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">node.js</a></p>
-</li>
-<li><p>下载并安装<a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">PicGo</a></p>
-</li>
-<li><p>typora-偏好设置<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401092.png" alt="image-20230320201957552"></p>
-</li>
-<li><p>利用docker搭建skyPro</p>
-<pre><code class="docker">docker run -d --name lsky -p 8090:80 -v /var/project/lsky:/var/www/html halcyonazure/lsky-pro-docker:latest
-</code></pre>
-<p>数据库方面可以选sqite</p>
-</li>
-<li><p>在PicGo中安装lankong 1.1.3<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401094.png" alt="image-20230320202551388"><br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401898.png" alt="image-20230320203428385"></p>
-</li>
-<li><p>利用postman获取tocken</p>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401948.png" alt="image-20230309113816510"><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401135.png" alt="image-20230309113610967"><br>获得tocken “x|xxxx……xx”</p>
-</li>
-<li><p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401575.png" alt="image-20230309122232246"></p>
-</li>
-<li><p>typora进行测试</p>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401610.png" alt="image-20230320204342515"></p>
-<p>图片上传成功即可</p>
-<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211401394.png" alt="image-20230320204629678"></p>
-<p>改成这样即可成功，图片自动上传到图床</p>
-<h2 id="如果不想用自建的图床可以换成github图床"><a href="#如果不想用自建的图床可以换成github图床" class="headerlink" title="如果不想用自建的图床可以换成github图床"></a>如果不想用自建的图床可以换成github图床</h2><ol>
-<li>上传前将picgo设置为时间戳重命名<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211403660.png" alt="image-20230321140338803"></li>
-<li>具体操作看</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ui4y1x7Cq">https://www.bilibili.com/video/BV1Ui4y1x7Cq</a></p>
-<ol start="3">
-<li><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303211407551.png" alt="image-20230321140602222"></li>
-</ol>
-<p>如果条件支持，建议在picgo上面设置代理，<a href="http://127.0.0.1:xxxxx">http://127.0.0.1:xxxxx</a></p>
+        <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/beta/article/1921363">https://cloud.tencent.com/developer/beta/article/1921363</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>
@@ -661,12 +601,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>typora+PicGo+LskyPro+Obsidian实现文章管理</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">328</span></p>
+    <p><span class="copy-title">文章标题:</span>群晖进行DDNS解析</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">8</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
-    <p><span class="copy-title">发布时间:</span>2023-03-23, 22:37:16</p>
-    <p><span class="copy-title">最后更新:</span>2023-03-29, 12:58:08</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/03/23/typora+PicGo+LskyPro+Obsidian%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%AE%A1%E7%90%86/" title="typora+PicGo+LskyPro+Obsidian实现文章管理">https://sunwu57.github.io/2023/03/23/typora+PicGo+LskyPro+Obsidian%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%AE%A1%E7%90%86/</a>
+    <p><span class="copy-title">发布时间:</span>2023-05-07, 21:18:57</p>
+    <p><span class="copy-title">最后更新:</span>2023-05-07, 21:19:19</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/05/07/%E7%BE%A4%E6%99%96%E8%BF%9B%E8%A1%8CDDNS%E8%A7%A3%E6%9E%90/" title="群晖进行DDNS解析">https://sunwu57.github.io/2023/05/07/%E7%BE%A4%E6%99%96%E8%BF%9B%E8%A1%8CDDNS%E8%A7%A3%E6%9E%90/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
     </p>

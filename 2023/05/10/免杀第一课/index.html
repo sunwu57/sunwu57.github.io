@@ -174,7 +174,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(17)</small>
+                <small>(19)</small>
             
         </div>
     </li>
@@ -185,7 +185,7 @@
                     <div data-rel="杂文">
                         
                         杂文
-                        <small>(11)</small>
+                        <small>(12)</small>
                         
                     </div>
                     
@@ -213,7 +213,7 @@
                     <div data-rel="红队">
                         
                         红队
-                        <small>(1)</small>
+                        <small>(2)</small>
                         
                     </div>
                     
@@ -277,8 +277,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="17">
-<input type="hidden" id="yelog_site_word_count" value="25.5k">
+<input type="hidden" id="yelog_site_posts_number" value="19">
+<input type="hidden" id="yelog_site_word_count" value="25.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -360,6 +360,14 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C#</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>chatGPT</a>
             </li>
         
@@ -380,6 +388,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>typora</a>
             </li>
         
@@ -389,6 +401,24 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/05/21/mysql%E5%AE%89%E8%A3%85/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="mysql安装">mysql安装</span>
+            <span class="post-date" title="2023-05-21 21:48:56">2023/05/21</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 红队 "
+           href="/2023/05/13/%E5%85%8D%E6%9D%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/"
+           data-tag="免杀,go,C++,C#"
+           data-author="" >
+            <span class="post-title" title="免杀第二课">免杀第二课</span>
+            <span class="post-date" title="2023-05-13 16:21:12">2023/05/13</span>
+        </a>
         
         
         <a id="top" class="全部文章 红队 "
@@ -592,7 +622,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-05-11 13:59:20'>2023-05-10 05:14</time>
+            发布时间 : <time class="date" title='最后更新: 2023-05-20 18:37:02'>2023-05-10 05:14</time>
         
     </div>
     <div class="article-meta">
@@ -667,9 +697,9 @@
 <h2 id="杀软监测机制-摘自先知社区"><a href="#杀软监测机制-摘自先知社区" class="headerlink" title="杀软监测机制(摘自先知社区)"></a>杀软监测机制(摘自<a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/11496">先知社区</a>)</h2><p><code>net.exe user abc 123 /add</code></p>
 <p>cmd- hook(某绒)-&gt;net.exe(System32/net.exe)    – HOOK(某绒程序)&gt;    net1.exe  –HOOK(某60程序)&gt;  Kernel32.dll –&gt; NTDLL.dll–&gt; sysCall系统调用 – &gt; 内核(r0)</p>
 <p>系统核心态指的是RO，用户态指的是R3，系统代码在核心态下运行，用户代码在用户态下运行。系统中一共有四个权限级别，R1和R2运行设备驱动，RO到R3权限依次降低，RO和R3的权限分别为最高和最低.</p>
-<p><img src="./%E5%85%8D%E6%9D%80%E7%AC%AC%E4%B8%80%E8%AF%BE.assets/image-20230511130156002.png" alt="image-20230511130156002"></p>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202305201836581.png" alt="image-20230511130156002"></p>
 <p>在用户态运行的系统要控制系统时，或者要运行系统代码就必须取得R0权限。用户从R3到R0需要借助ntdll.dll中的函数，这些函数分别以“Nt”和“Zw”开头，这种函数叫做Native API，下图是调用过程：</p>
-<p><img src="./%E5%85%8D%E6%9D%80%E7%AC%AC%E4%B8%80%E8%AF%BE.assets/image-20230511130237081.png" alt="image-20230511130237081"></p>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202305201836971.png" alt="image-20230511130237081"></p>
 <h2 id="免杀思路"><a href="#免杀思路" class="headerlink" title="免杀思路"></a>免杀思路</h2><ol>
 <li>寻找特点</li>
 <li>思考可替换的方法</li>
@@ -746,7 +776,7 @@ int main() &#123;
     <p><span class="copy-title">字数:</span><span class="post-count">645</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
     <p><span class="copy-title">发布时间:</span>2023-05-10, 05:14:38</p>
-    <p><span class="copy-title">最后更新:</span>2023-05-11, 13:59:20</p>
+    <p><span class="copy-title">最后更新:</span>2023-05-20, 18:37:02</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/05/10/%E5%85%8D%E6%9D%80%E7%AC%AC%E4%B8%80%E8%AF%BE/" title="免杀第一课">https://sunwu57.github.io/2023/05/10/%E5%85%8D%E6%9D%80%E7%AC%AC%E4%B8%80%E8%AF%BE/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。

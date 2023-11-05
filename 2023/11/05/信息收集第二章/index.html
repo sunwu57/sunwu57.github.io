@@ -278,7 +278,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="22">
-<input type="hidden" id="yelog_site_word_count" value="28.4k">
+<input type="hidden" id="yelog_site_word_count" value="29.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -651,12 +651,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-11-05 10:00:29'>2023-11-05 09:48</time>
+            发布时间 : <time class="date" title='最后更新: 2023-11-05 10:02:31'>2023-11-05 09:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:427</span>
+        <span>字数:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -675,7 +675,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#waybackurls"><span class="toc-text">waybackurls</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Gau"><span class="toc-text">Gau</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#hakrawler"><span class="toc-text">hakrawler</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#crawlergo"><span class="toc-text">crawlergo</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#awvs"><span class="toc-text">awvs</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#waybackurls"><span class="toc-text">waybackurls</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Gau"><span class="toc-text">Gau</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#hakrawler"><span class="toc-text">hakrawler</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#crawlergo"><span class="toc-text">crawlergo</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#awvs"><span class="toc-text">awvs</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#url%E7%9A%84%E5%8E%BB%E9%87%8D"><span class="toc-text">url的去重</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#xray"><span class="toc-text">xray</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -706,6 +706,188 @@
 <p><code>./crawlergo -c /root/tools/craw/chrome-linux/chrome -t 20 --push-to-proxy &quot;http://127.0.0.1:7777/</code></p>
 <h5 id="awvs"><a href="#awvs" class="headerlink" title="awvs"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/06/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%BA%8C-%E7%88%AC%E8%99%AB%E9%93%BE%E6%8E%A5/#awvs" title="awvs"></a><a target="_blank" rel="noopener" href="https://www.acunetix.com/vulnerability-scanner/">awvs</a></h5><p>主要是使用awvs的爬虫功能，爬取的链接设置被动扫描代理地址。调用awvs的几个api，进行批量的添加任务，对任务设置代理，然后扫描，最后删除任务。</p>
 <p>参考这个 <a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-808191-1-1.html">AWVS 批量添加扫描/删除任务脚本</a>，添加一个代理函数。</p>
+<pre><code>import json  
+import queue  
+import requests  
+import time  
+  
+requests.packages.urllib3.disable_warnings()  
+# awvs 12 api  
+  
+class AwvsScan(object):  
+    def __init__(self):  
+        self.scanner = &#39;https://127.0.0.1:3443&#39;  
+        self.api = &#39;1986ad8c0a5b3df4d7028d5f3c06e936ced2583c73c594961&#39;  
+        self.ScanMode = &#39;11111111-1111-1111-1111-111111111117&#39;  
+        self.headers = &#123;&#39;X-Auth&#39;: self.api, &#39;content-type&#39;: &#39;application/json&#39;&#125;  
+        self.targets_id = queue.Queue()  # 目标ID  
+        self.scan_id = queue.Queue()  
+        self.site = queue.Queue()  # website  
+  
+    # 主函数进行扫描还是删除  
+    def main(self):  
+        print(&#39;=&#39; * 80)  
+        print(&quot;&quot;&quot;1、使用awvs.txt添加任务\n2、设置代理\n3、开始扫描\n4、删除所有任务&quot;&quot;&quot;)  
+        print(&#39;=&#39; * 80)  
+        choice = input(&quot;&gt;&quot;)  
+        if choice == &#39;1&#39;:  
+            self.targets()  
+        if choice == &#39;4&#39;:  
+            self.del_targets()  
+        if choice == &#39;2&#39;:  
+            self.proxy()  
+        if choice == &#39;3&#39;:  
+            self.scans()  
+        self.main()  
+  
+    # 将website写入队列之中  
+    def openfile(self):  
+        with open(&#39;awvs.txt&#39;) as cent:  
+            for web_site in cent:  
+  
+                web_site = web_site.strip(&#39;\n\r&#39;)  
+  
+                self.site.put(web_site)  
+  
+    # 添加扫描目标  
+    def targets(self):  
+        self.openfile()  
+        while not self.site.empty():  
+            website = self.site.get()  
+            try:  
+                data = &#123;&#39;address&#39;: website,  
+                        &#39;description&#39;: &#39;awvs-auto4&#39;,  
+                        &#39;criticality&#39;: &#39;10&#39;&#125;  
+                response = requests.post(self.scanner + &#39;/api/v1/targets&#39;, data=json.dumps(data), headers=self.headers,  
+                                        verify=False)  
+                cent = json.loads(response.content)  
+  
+                target_id = cent[&#39;target_id&#39;]  
+                self.targets_id.put(target_id)  # 目标ID  
+            except Exception as e:  
+                print(&#39;Target is not website! &#123;&#125;&#39;.format(website))  
+        #对每一个任务设置代理地址  
+    def proxy(self):  
+        self.get_targets_id()  
+        while not self.targets_id.empty():  
+            data = &#123;&quot;proxy&quot;:  
+                        &#123;&quot;enabled&quot;: True,  
+                         &quot;address&quot;: &quot;127.0.0.1&quot;,  
+                         &quot;protocol&quot;: &quot;http&quot;,  
+                         &quot;port&quot;: 7777  
+                         &#125;  
+                    &#125;  
+            path = &#39;/api/v1/targets/&#123;&#125;/configuration&#39;.format(self.targets_id.get()[1])  
+            url = self.scanner + path  
+            #print(url)  
+            response = requests.patch(url, data=json.dumps(data), headers=self.headers, allow_redirects=False, verify=False)  
+  
+  
+    def scans(self):  
+        #self.targets()  
+        self.get_targets_id()  
+        while not self.targets_id.empty():  
+  
+            data = &#123;&#39;target_id&#39;: self.targets_id.get()[1],  
+                        &#39;profile_id&#39;: self.ScanMode,  
+                        &#39;schedule&#39;: &#123;&#39;disable&#39;: False, &#39;start_date&#39;: None, &#39;time_sensitive&#39;: False&#125;&#125;  
+  
+            response = requests.post(self.scanner + &#39;/api/v1/scans&#39;, data=json.dumps(data), headers=self.headers,  
+                                         allow_redirects=False, verify=False)  
+            time.sleep(180)  
+            if response.status_code == 201:  
+                cent = response.headers[&#39;Location&#39;].replace(&#39;/api/v1/scans/&#39;, &#39;&#39;)  
+                print(cent)  
+  
+    def get_targets_id(self):  
+        response = requests.get(self.scanner + &quot;/api/v1/targets&quot;, headers=self.headers, verify=False)  
+        content = json.loads(response.content)  
+        for cent in content[&#39;targets&#39;]:  
+            self.targets_id.put([cent[&#39;address&#39;], cent[&#39;target_id&#39;]])  
+  
+    def del_targets(self):  
+        while True:  
+            self.get_targets_id()  
+            if self.targets_id.qsize() == 0:  
+                break  
+            else:  
+                while not self.targets_id.empty():  
+                    targets_info = self.targets_id.get()  
+                    response = requests.delete(self.scanner + &quot;/api/v1/targets/&quot; + targets_info[1],  
+                                               headers=self.headers, verify=False)  
+                    if response.status_code == 204:  
+                        print(&#39;delete targets &#123;&#125;&#39;.format(targets_info[0]))  
+  
+  
+if __name__ == &#39;__main__&#39;:  
+    Scan = AwvsScan()  
+    Scan.main()
+</code></pre>
+<h5 id="url的去重"><a href="#url的去重" class="headerlink" title="url的去重"></a>url的去重</h5><p>爬取到的url会有很多重复的，需要考虑去重。<br><a target="_blank" rel="noopener" href="http://www.abc.com/index.php?id=1111">www.abc.com/index.php?id=1111</a><br><a target="_blank" rel="noopener" href="http://www.abc.com/index.php?id=2222">www.abc.com/index.php?id=2222</a></p>
+<pre><code>[root@vultr ~]# echo testphp.vulnweb.com | waybackurls |wc -l  
+446  
+# grep 获取查询的链接  
+[root@vultr ~]# echo testphp.vulnweb.com | waybackurls | grep &#39;?&#39;| wc -l  
+116  
+  
+#  awk -F &#39;=&#39; &#39;&#123;&#123;print $1&#125;&#125;&#39; 以&#39;=&#39; 分割，不要参数，只获取路径  
+[root@vultr ~]# echo testphp.vulnweb.com | waybackurls | grep &#39;?&#39;| awk -F &#39;=&#39; &#39;&#123;&#123;print $1&#125;&#125;&#39; |wc -l   
+118  
+  
+# sort -u 对路径的去重  
+[root@vultr ~]# echo testphp.vulnweb.com | waybackurls | grep &#39;?&#39;| awk -F &#39;=&#39; &#39;&#123;&#123;print $1&#125;&#125;&#39; | sort -u | wc -l  
+38  
+  
+# sed &#39;s/$/&amp;=2/g&#39;  为查询的参数添加值为2  
+[root@vultr ~]# echo testphp.vulnweb.com | waybackurls | grep &#39;?&#39;| awk -F &#39;=&#39; &#39;&#123;&#123;print $1&#125;&#125;&#39; | sort -u | sed &#39;s/$/&amp;=2/g&#39; | wc -l  
+38  
+  
+#最后获取到的链接(部分)  
+http://testphp.vulnweb.com:80/productlist.php?=2  
+http://testphp.vulnweb.com:80/product.php?=2  
+http://testphp.vulnweb.com:80/product.php?pic=2  
+http://testphp.vulnweb.com:80/redir.php?r=2  
+http://testphp.vulnweb.com:80/search.php?=2  
+http://testphp.vulnweb.com:80/search.php?test=2
+</code></pre>
+<h5 id="xray"><a href="#xray" class="headerlink" title="xray"></a><a target="_blank" rel="noopener" href="https://xray.cool/xray/#/">xray</a></h5><p>使用xray对爬取到的url进行批量扫描。</p>
+<pre><code>import time  
+import sys  
+import os  
+# 单独的爬取域名的url，进行去重扫描  
+#urls txt url-&gt;name  
+if len(sys.argv) == 1:  
+    msg = &quot;&quot;&quot;  
+        Find XSS with subdomain of craw xray  
+        Usage: xss.py subdomain.txt  
+    &quot;&quot;&quot;  
+    print(msg)  
+    sys.exit(0)  
+file = sys.argv[1]  
+#url = sys.argv[2]  
+with open(file,&#39;r&#39;) as f:  
+    for i in f.readlines():  
+        url = i.strip(&#39;\n&#39;)  
+  
+        print(url)  
+        d = &#39;echo &#123;0&#125; | waybackurls &gt; &#123;1&#125;_url1.txt&#39;.format(url,url)  
+  
+        os.system(d)  
+  
+        a = &#39;cat &#123;0&#125;_url1.txt | sort -u &gt; &#123;1&#125;_qurl.txt&#39;.format(url,url)  
+        os.system(a)  
+  
+        g = &quot;cat &#123;0&#125;_qurl.txt | grep &#39;?&#39; | awk -F &#39;=&#39; &#39;&#123;&#123;print $1&#125;&#125;&#39; | sort -u | sed &#39;s/$/&amp;=2/g&#39; &gt; &#123;1&#125;_qc.txt&quot;.format(url,url)  
+        print(g)  
+        os.system(g)  
+  
+        f = &#39;/root/tools/xary/xray_linux_amd64 webscan --url-file &#123;0&#125;_qc.txt --html-output &#123;1&#125;.html&#39;.format(url,url)  
+        try:  
+            os.system(f)  
+            time.sleep(60)  
+        except:  
+            pass
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>
@@ -720,10 +902,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>信息收集第二章</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">427</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">1.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
     <p><span class="copy-title">发布时间:</span>2023-11-05, 09:48:30</p>
-    <p><span class="copy-title">最后更新:</span>2023-11-05, 10:00:29</p>
+    <p><span class="copy-title">最后更新:</span>2023-11-05, 10:02:31</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/11/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="信息收集第二章">https://sunwu57.github.io/2023/11/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。

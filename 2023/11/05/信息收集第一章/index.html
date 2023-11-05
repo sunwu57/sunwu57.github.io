@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>hackerone挖洞之旅 | 子夜旅馆</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="hackerone挖洞之旅 | 子夜旅馆">
+  <title>信息收集第一章 | 子夜旅馆</title>
+  <meta name="keywords" content=" 信息收集 ">
+  <meta name="description" content="信息收集第一章 | 子夜旅馆">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="子夜旅馆">
 <meta property="og:type" content="website">
@@ -613,9 +613,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-hackerone挖洞之旅" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-信息收集第一章" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hackerone挖洞之旅</h1>
+        <h1 class="article-title">信息收集第一章</h1>
     
     <div class="article-meta">
         
@@ -627,20 +627,27 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="杂文">杂文</a>
+            <a  data-rel="渗透">渗透</a>
             
         </span>
         
         
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">信息收集</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-04-15 20:15:06'>2023-04-13 14:34</time>
+            发布时间 : <time class="date" title='最后更新: 2023-11-05 09:52:30'>2023-11-05 09:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.1k</span>
+        <span>字数:2.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -659,7 +666,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hackerone%E6%8C%96%E6%B4%9E%E4%B9%8B%E6%97%85"><span class="toc-text">hackerone挖洞之旅</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-text">流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E7%9B%AE%E6%A0%87"><span class="toc-text">确定目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E6%98%AFprojectdiscovery"><span class="toc-text">首先是projectdiscovery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bounty-targets-data"><span class="toc-text">bounty-targets-data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HackerOne%E7%AD%9B%E9%80%89"><span class="toc-text">HackerOne筛选</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E6%88%90%E5%8A%9F%E6%A1%88%E4%BE%8B"><span class="toc-text">学习成功案例</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E5%9F%9F%E5%90%8D"><span class="toc-text">子域名</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Amass"><span class="toc-text">Amass</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#crt-sh"><span class="toc-text">crt.sh</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#subfinder"><span class="toc-text">subfinder</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#assetfinder"><span class="toc-text">assetfinder</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E5%AD%90%E5%9F%9F%E5%90%8D%E6%9E%9A%E4%B8%BE%E5%B7%A5%E5%85%B7-%E5%AD%90%E5%9F%9F%E5%90%8D%E6%89%98%E7%AE%A1%E6%BC%8F%E6%B4%9E%E9%AA%8C%E8%AF%81"><span class="toc-text">多个子域名枚举工具+ 子域名托管漏洞验证</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E5%AD%98%E6%B4%BB%E5%88%A4%E6%96%AD"><span class="toc-text">域名存活判断</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%81%E4%B8%9A%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84%E6%94%B6%E9%9B%86%E4%BF%A1%E6%81%AF"><span class="toc-text">企业组织架构收集信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AC%E4%BC%97%E5%8F%B7-amp-%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="toc-text">公众号&amp;小程序</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF"><span class="toc-text">敏感信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#BBScan-%E6%95%8F%E6%84%9F%E8%B7%AF%E5%BE%84%E6%8E%A2%E6%B5%8B"><span class="toc-text">BBScan 敏感路径探测</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ffuf-%E7%88%86%E7%A0%B4%E7%9B%AE%E5%BD%95-%E5%8F%82%E6%95%B0%E7%88%86%E7%A0%B4"><span class="toc-text">ffuf 爆破目录 参数爆破</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JS%E6%96%87%E4%BB%B6"><span class="toc-text">JS文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#google-%E6%90%9C%E7%B4%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">google 搜索脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E6%B1%87%E6%80%BB"><span class="toc-text">脚本汇总</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -675,29 +682,112 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="hackerone挖洞之旅"><a href="#hackerone挖洞之旅" class="headerlink" title="hackerone挖洞之旅"></a>hackerone挖洞之旅</h1><ol>
-<li>今天心血来潮，打算自动化挖一下hackerone</li>
-<li>hackerone是一个国外的漏洞悬赏平台地址<a target="_blank" rel="noopener" href="https://hackerone.com/hacker_dashboard/overview">hackerone</a></li>
-</ol>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><blockquote>
-<p>4万多url，跑了几天 还没跑完没怎么休息过 针对国外资产<br>子域名＞爆破＞ssl证书查询子域名＞ip池+梯子+使用爬虫对ip归属地进分流确保自己是该资产归属地的原生ip（例如hk原生ip梯子访问hk）一般国外厂商会屏蔽梯子不许访问一些页面＞ip段＞资产存活自动监控梳理资产＞收集敏感js文件以及接口告警＞收集了很多国外的cms blog的特征＞基础信息：IP，网段，域名，端口<br>系统信息：操作系统版本<br>应用信息：各端口的应用，例如web应用，邮件应用等<br>版本信息：所有探测到的版本<br>服务信息：服务器类型、版本<br>人员信息：域名注册人员信息，web应用中网站发帖人的id，管理员姓名等<br>（网站以前看到过复制的几个基本信息）<br>＞编写和copy了大量网上现存的poc以及ChatGPT帮忙编写存入自己轮子一次扫描，伪装Google爬虫（一般国外平台识别是用户会自动跳转到登录平台Google爬虫不会＞xray+awvs两次扫描＞生成报告＞每两个周重新梳理监测是否上线新的ip以及域名<br>现在加上一个fofa采集和shodan采集<br>这些主要是看自己的经验，所谓的自动化本质就是在原经验的基础上，重复的事情简单化，没啥特别牛的 网上大部分教程都是割韭菜的，比如刷漏洞，为什么很多人批量搞不出来，1.没有针对国内国外的主流编写对应的绕过脚本，比如安全狗 爬虫采集url到是安全狗之后，使用Python执行sqlmap自己编写的安全狗bypass脚本，如果你编写了主流的安全绕过脚本 基本随便搞<br>爬一下有赏金的域名，然后fofa shodan采集一波资产<br>再针对性写cloudflare的绕过waf<br>一般都能爬出来很多xss<br>sql注入把带❓问号的url提取出来写个bypass脚本直接开搞<br>sqlmap批量</p>
-</blockquote>
-<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><h2 id="确定目标"><a href="#确定目标" class="headerlink" title="确定目标"></a>确定目标</h2><h3 id="首先是projectdiscovery"><a href="#首先是projectdiscovery" class="headerlink" title="首先是projectdiscovery"></a>首先是projectdiscovery</h3><p>这里会有Hackerone\bugcrowd\以及其他平台的自建安全计划等等<br><a target="_blank" rel="noopener" href="https://chaos.projectdiscovery.io/#/">https://chaos.projectdiscovery.io/#/</a><br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202304152014764.png" alt="img"><br>勾选一下with rewards，就是有奖励的资产，更新时间一般都是近几小时，找更新时间近的挖<br>域名收集的工作projectdiscovery已经帮我们做好了，然后就直接下载即可，域名与子域名就全部下载回来了</p>
-<h3 id="bounty-targets-data"><a href="#bounty-targets-data" class="headerlink" title="bounty-targets-data"></a>bounty-targets-data</h3><p><a target="_blank" rel="noopener" href="https://github.com/arkadiyt/bounty-targets-data">https://github.com/arkadiyt/bounty-targets-data</a><br>这是个git项目，不用自己部署，用在线的就行<br>每30分钟爬取一次有奖励的资产，并同步到bounty-targets-data项目上<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202304152014823.png" alt="img"><br>来源也比较多</p>
-<ul>
-<li>Hackerone</li>
-<li>Bugcrowd</li>
-<li>Intigriti</li>
-<li>Hackenproof</li>
-<li>YesWeHack</li>
-<li>Federacy<br>A类 比较严重直接资产：<a target="_blank" rel="noopener" href="https://github.com/arkadiyt/bounty-targets-data/blob/master/data/domains.txt">https://github.com/arkadiyt/bounty-targets-data/blob/master/data/domains.txt</a><br>B类 可以往子域名搞搞的：<a target="_blank" rel="noopener" href="https://github.com/arkadiyt/bounty-targets-data/blob/master/data/wildcards.txt">https://github.com/arkadiyt/bounty-targets-data/blob/master/data/wildcards.txt</a><h3 id="HackerOne筛选"><a href="#HackerOne筛选" class="headerlink" title="HackerOne筛选"></a>HackerOne筛选</h3>Hackerone也不是所有资产都有赏金，需要筛选一下，有赏金的，响应效率高的，有域名的<br><a target="_blank" rel="noopener" href="https://hackerone.com/directory/programs?active_only=false&asset_type=URL&high_response_efficiency=true&offers_bounties=true&order_direction=DESC&order_field=resolved_report_count">https://hackerone.com/directory/programs?offers_bounties=true&amp;high_response_efficiency=true&amp;active_only=false&amp;asset_type=URL&amp;order_direction=DESC&amp;order_field=resolved_report_count</a><br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202304152014394.png" alt="img"><br>如果你是代码审计方向的师傅，想通过代码审计来获取赏金，那你就可以筛选能提供源代码让你审计的项目<br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202304152015558.png" alt="img"><br>如果你是 二进制，逆向，客户端等方向的师傅，那你就筛选客户端，安卓，IOS，等等</li>
-</ul>
-<h2 id="学习成功案例"><a href="#学习成功案例" class="headerlink" title="学习成功案例"></a>学习成功案例</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://articles.zsxq.com/id_mj5vpa6kb4t4.html">https://articles.zsxq.com/id_mj5vpa6kb4t4.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/md04bpX9X4nYVntmb_mNPg">https://mp.weixin.qq.com/s/md04bpX9X4nYVntmb_mNPg</a></li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4NDU0ODMxOQ==&amp;mid=2247485734&amp;idx=1&amp;sn=2c002770e14e26da5199abf63f354aec&amp;chksm=cfb73e96f8c0b780b585d065d7280935182a730f202286b5e8f3d0bd4a4600d3244671fd13ee&amp;mpshare=1&amp;srcid=0815XKzDg3HarM3ZXhEkii7q&amp;sharer_sharetime=1660524686740&amp;sharer_shareid=268643689c88efd68ad5b5eaedbb6e0e&amp;from=timeline&amp;scene=2&amp;subscene=2&amp;clicktime=1660536867&amp;enterid=1660536867&amp;sessionid=0&amp;ascene=2&amp;fasttmpl_type=0&amp;fasttmpl_fullversion=6283113-zh_CN-zip&amp;fasttmpl_flag=0&amp;realreporttime=1660536867295&amp;devicetype=android-31&amp;version=28001851&amp;nettype=cmnet&amp;abtest_cookie=AAACAA==&amp;lang=zh_CN&amp;exportkey=AV0tz3hVB7lVcAjAPbAW008=&amp;pass_ticket=nfZDC9x5GSGUB9Z3A7kN/rqEXFNDLKHgkMbS/54Flqjrk7xRg9+UUxNAk8EM1M49&amp;wx_header=3">https://mp.weixin.qq.com/s?__biz=Mzg4NDU0ODMxOQ==&amp;mid=2247485734&amp;idx=1&amp;sn=2c002770e14e26da5199abf63f354aec&amp;chksm=cfb73e96f8c0b780b585d065d7280935182a730f202286b5e8f3d0bd4a4600d3244671fd13ee&amp;mpshare=1&amp;srcid=0815XKzDg3HarM3ZXhEkii7q&amp;sharer_sharetime=1660524686740&amp;sharer_shareid=268643689c88efd68ad5b5eaedbb6e0e&amp;from=timeline&amp;scene=2&amp;subscene=2&amp;clicktime=1660536867&amp;enterid=1660536867&amp;sessionid=0&amp;ascene=2&amp;fasttmpl_type=0&amp;fasttmpl_fullversion=6283113-zh_CN-zip&amp;fasttmpl_flag=0&amp;realreporttime=1660536867295&amp;devicetype=android-31&amp;version=28001851&amp;nettype=cmnet&amp;abtest_cookie=AAACAA%3D%3D&amp;lang=zh_CN&amp;exportkey=AV0tz3hVB7lVcAjAPbAW008%3D&amp;pass_ticket=nfZDC9x5GSGUB9Z3A7kN%2FrqEXFNDLKHgkMbS%2F54Flqjrk7xRg9%2BUUxNAk8EM1M49&amp;wx_header=3</a></li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Tu2msbgG8rDzXm4N6xKvtQ">https://mp.weixin.qq.com/s/Tu2msbgG8rDzXm4N6xKvtQ</a></li>
-</ol>
+        <p>信息收集第一步。</p>
+<p>高手们都说“信息收集”决定挖洞的效果，目标多了，自然挖到的可能就多些。有了目标之后，还需要自身技术积累是否强大，这会决定挖洞的质量。</p>
+<p>利用网上公开的脚本，自动化来获取想要的信息，这样会节省时间提高效率。</p>
+<h4 id="子域名"><a href="#子域名" class="headerlink" title="子域名"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E5%AD%90%E5%9F%9F%E5%90%8D" title="子域名"></a>子域名</h4><h5 id="Amass"><a href="#Amass" class="headerlink" title="Amass"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#Amass" title="Amass"></a>Amass</h5><p><a target="_blank" rel="noopener" href="https://github.com/OWASP/Amass">https://github.com/OWASP/Amass</a></p>
+<p>缺点：速度慢，如果对大量的域名进行子域名枚举的话，会花费几天时间。单个域名枚举的时候，可以使用。</p>
+<p><code>amass enum -d baidu.com -o baidu_amass.txt</code></p>
+<h5 id="crt-sh"><a href="#crt-sh" class="headerlink" title="crt.sh"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#crt-sh" title="crt.sh"></a>crt.sh</h5><p><a target="_blank" rel="noopener" href="https://crt.sh/">https://crt.sh/</a></p>
+<p>HTTPS证书透明度</p>
+<p>Google 证书透明度报告项目，解决HTTPS证书系统的结构性缺陷，让所有人查看各个网站的HTTPS证书，从而发现签发了证书的子域名。</p>
+<p>HTTPS证书内置支持的域名和子域名</p>
+<p><a target="_blank" rel="noopener" href="https://crt.sh/?q=baidu.com&output=json">https://crt.sh/?q=baidu.com&amp;output=json</a></p>
+<p><code>curl -s &quot;https://crt.sh/?q=baidu.com&amp;output=json&quot; | jq -r &#39;.[].name_value&#39;| sed &#39;s/\*\.//g&#39; | sort -u | tee -a baidu.txt</code></p>
+<h5 id="subfinder"><a href="#subfinder" class="headerlink" title="subfinder"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#subfinder" title="subfinder"></a>subfinder</h5><p><a target="_blank" rel="noopener" href="https://github.com/projectdiscovery/subfinder">https://github.com/projectdiscovery/subfinder</a></p>
+<p>Go 语言写的速度快</p>
+<p><code>subfinder -d &#123;0&#125; -o &#123;1&#125;_sub.txt</code></p>
+<h5 id="assetfinder"><a href="#assetfinder" class="headerlink" title="assetfinder"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#assetfinder" title="assetfinder"></a>assetfinder</h5><p><a target="_blank" rel="noopener" href="https://github.com/tomnomnom/assetfinder">https://github.com/tomnomnom/assetfinder</a></p>
+<p>Go 编写</p>
+<p><code>assetfinder [--subs-only] &lt;domain&gt;</code></p>
+<h5 id="多个子域名枚举工具-子域名托管漏洞验证"><a href="#多个子域名枚举工具-子域名托管漏洞验证" class="headerlink" title="多个子域名枚举工具+ 子域名托管漏洞验证"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E5%A4%9A%E4%B8%AA%E5%AD%90%E5%9F%9F%E5%90%8D%E6%9E%9A%E4%B8%BE%E5%B7%A5%E5%85%B7-%E5%AD%90%E5%9F%9F%E5%90%8D%E6%89%98%E7%AE%A1%E6%BC%8F%E6%B4%9E%E9%AA%8C%E8%AF%81" title="多个子域名枚举工具+ 子域名托管漏洞验证"></a>多个子域名枚举工具+ 子域名托管漏洞验证</h5><p>利用多个子域名枚举工具，将其结果汇总去重，最后检测是否存在子域名托管漏洞。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1  <br>2  <br>3  <br>4  <br>5  <br>6  <br>7  <br>8  <br>9  <br>10  <br>11  <br>12  <br>13  <br>14  <br>15  <br>16  <br>17  <br>18  <br>19  <br>20  <br>21  <br>22  <br>23  <br>24  <br>25  <br>26  <br>27  <br>28  <br>29  <br>30  <br>31  <br>32  <br>33  <br>34  <br>35  <br>36  <br>37</td>
+<td>import sys  <br>import os  <br>  <br>urls = sys.argv[1]  <br>  <br>with open(urls, ‘r’) as f:  <br>    for i in f.readlines():  <br>        url = i.strip(‘\n’)  <br>        print(url)  <br>  <br>        a = ‘’’curl -s “<a target="_blank" rel="noopener" href="https://crt.sh/?q=%7B0%7D&amp;output=json&quot;">https://crt.sh/?q={0}&amp;output=json&quot;</a> | jq -r ‘.[].name_value’| sed ‘s/*.//g’ | sort -u | tee -a {1}_crt.txt’’’.format(url,url)  <br>        os.system(a)  <br>  <br>        # _amass.txt  <br>        b   = ‘amass enum -d {0} -o {1}_amass.txt’.format(url,url)  <br>        os.system(b)  <br>  <br>        #_sub.txt  <br>        c = ‘subfinder -d {0} -o {1}_sub.txt’.format(url,url)  <br>        os.system(c)  <br>        #asset  <br>        i = ‘assetfinder {0} | sort -u &gt; {1}_asset.txt’.format(url,url)  <br>        os.system(i)  <br>        d = ‘cat {0}_crt.txt {1}_amass.txt {2}_sub.txt {3}_asset.txt | sort | uniq &gt; {4}.txt’.format(url,url,url,url,url)  <br>  <br>        os.system(d)  <br>        #  <br>        e = ‘rm -rf {0}_crt.txt {1}_amass.txt {2}_sub.txt {3}<em>asset.txt’.format(url,url,url,url)  <br>        os.system(e)  <br>  <br>       # f = ‘cat {0}.txt | aquatone -chrome-path /root/tools/craw/chrome-linux/chrome’.format(url)  <br>        #os.system(f)  <br>  <br>        # sub takeover  <br>  <br>        g = ‘subjack -w {0}.txt  -t 1000 -o takeover</em>{1}.txt -ssl’.format(url,url)  <br>        os.system(g)</td>
+</tr>
+</tbody></table>
+<h5 id="域名存活判断"><a href="#域名存活判断" class="headerlink" title="域名存活判断"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E5%9F%9F%E5%90%8D%E5%AD%98%E6%B4%BB%E5%88%A4%E6%96%AD" title="域名存活判断"></a>域名存活判断</h5><p>HTTP&amp;HTTPS 判断去重</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tomnomnom/httprobe">https://github.com/tomnomnom/httprobe</a></p>
+<p><code>cat oppo.txt | httprobe &gt; hoppo.txt</code></p>
+<p>获取到的域名可能会有重复的，比如<code>www.abc.com</code> http/https都能访问通。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1  <br>2  <br>3  <br>4  <br>5  <br>6  <br>7  <br>8  <br>9  <br>10  <br>11  <br>12  <br>13  <br>14  <br>15  <br>16  <br>17  <br>18  <br>19  <br>20  <br>21  <br>22  <br>23  <br>24  <br>25  <br>26  <br>27</td>
+<td>import sys  <br>  <br>if len(sys.argv) == 1:  <br>    msg = “””  <br>    unqiue http(s) domain  <br>    Usage: qcdomain.py input output1(<a target="_blank" rel="noopener" href="http://www.abc.com/">http://www.abc.com</a>) output2(<a target="_blank" rel="noopener" href="http://www.abc.com/">www.abc.com</a>)  <br>        “””  <br>    print(msg)  <br>    sys.exit(0)  <br>  <br>domains = sys.argv[1]  <br>qdomains = sys.argv[2]  <br>qdomain = sys.argv[3]  <br>b = []  <br>with open(domains,’r’) as f:  <br>    for i in f:  <br>        domain = (i.strip(‘\n’).split(‘//‘)[1])  <br>        b.append(domain)  <br>        #向列表b中添加域名，然后判断出现一次的时候，直接把 http(s)://<a target="_blank" rel="noopener" href="http://www.abc.com输出.即使有重复的,只输出一次/">www.abc.com输出。即使有重复的，只输出一次</a>  <br>        if b.count(domain) == 1:  <br>            http_domain = i.strip()  <br>            #获取<a target="_blank" rel="noopener" href="http://www.abc.com/">http://www.abc.com</a> 跑敏感目录  <br>            with open(qdomains, ‘a+’) as d:  <br>                d.writelines(http_domain + ‘\n’)  <br>            #获取 domain   <a target="_blank" rel="noopener" href="http://www.abc.com/">www.abc.com</a>  nmap 跑端口  <br>            with open(qdomain, ‘a+’) as d:  <br>                d.writelines(http_domain.split(‘//‘)[1] + ‘\n’)</td>
+</tr>
+</tbody></table>
+<h5 id="企业组织架构收集信息"><a href="#企业组织架构收集信息" class="headerlink" title="企业组织架构收集信息"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E4%BC%81%E4%B8%9A%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84%E6%94%B6%E9%9B%86%E4%BF%A1%E6%81%AF" title="企业组织架构收集信息"></a><strong>企业组织架构收集信息</strong></h5><p><a target="_blank" rel="noopener" href="https://xin.baidu.com/">百度信用</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.tianyancha.com/">天眼查</a></p>
+<h5 id="公众号-amp-小程序"><a href="#公众号-amp-小程序" class="headerlink" title="公众号&amp;小程序"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E5%85%AC%E4%BC%97%E5%8F%B7-amp-%E5%B0%8F%E7%A8%8B%E5%BA%8F" title="公众号&amp;小程序"></a>公众号&amp;小程序</h5><p><a target="_blank" rel="noopener" href="https://github.com/3stoneBrother/personalTools/blob/master/scripts/gongzhonghao.py">公众号获取</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/D7_VXLH1Jr3yd_cB8u1MJQ">微信小程序的渗透</a></p>
+<h4 id="敏感信息"><a href="#敏感信息" class="headerlink" title="敏感信息"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF" title="敏感信息"></a>敏感信息</h4><h5 id="BBScan-敏感路径探测"><a href="#BBScan-敏感路径探测" class="headerlink" title="BBScan 敏感路径探测"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#BBScan-%E6%95%8F%E6%84%9F%E8%B7%AF%E5%BE%84%E6%8E%A2%E6%B5%8B" title="BBScan  敏感路径探测"></a>BBScan 敏感路径探测</h5><p><a target="_blank" rel="noopener" href="https://github.com/lijiejie/BBScan">https://github.com/lijiejie/BBScan</a></p>
+<p><code>[root@vultr BBScan]# python BBScan.py -f /root/tools/domains/src/oppo/qchoop.txt</code></p>
+<p>高危漏洞爆发后，编写规则插件，全网扫描。</p>
+<h5 id="ffuf-爆破目录-参数爆破"><a href="#ffuf-爆破目录-参数爆破" class="headerlink" title="ffuf 爆破目录 参数爆破"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#ffuf-%E7%88%86%E7%A0%B4%E7%9B%AE%E5%BD%95-%E5%8F%82%E6%95%B0%E7%88%86%E7%A0%B4" title="ffuf 爆破目录 参数爆破"></a>ffuf 爆破目录 参数爆破</h5><p><a target="_blank" rel="noopener" href="https://github.com/ffuf/ffuf">https://github.com/ffuf/ffuf</a></p>
+<p>可以对敏感路径以及参数进行爆破。</p>
+<p>批量的扫描。</p>
+<p>输出格式不是很好看，可以使用html格式。</p>
+<p><code>&quot;ffuf -w ../dict/dict.txt -u &#123;0&#125;/FUZZ -o &#123;1&#125;.html -of html&quot;.format(url,domain)</code></p>
+<p>GET参数</p>
+<p><code>ffuf -w /path/to/paramnames.txt -u https://target/script.php?FUZZ=test_value -fs 4242</code></p>
+<p>对域名批量敏感目录爬取。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1  <br>2  <br>3  <br>4  <br>5  <br>6  <br>7  <br>8  <br>9  <br>10  <br>11  <br>12</td>
+<td>import os  <br>import sys  <br>domain = sys.argv[1]  <br>with open(domain,’r’) as f:  <br>        domains = set(f)  <br>        #num = 51  <br>  <br>        for i in domains:  <br>                url = i.strip(‘\n’)  <br>                domain = url.split(‘//‘)[1]   <br>                a = “ffuf -w ../dict/dict.txt -u {0}/FUZZ  -o {1}.html -of html”.format(url,domain)  <br>                os.system(a)</td>
+</tr>
+</tbody></table>
+<h5 id="JS文件"><a href="#JS文件" class="headerlink" title="JS文件"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#JS%E6%96%87%E4%BB%B6" title="JS文件"></a>JS文件</h5><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4MzA4Nzg4Ng==&mid=2247483903&idx=1&sn=0f8b83fb47477d863ad0fd234c7d9baa&chksm=cf4d8e9ef83a0788f645e5c0142db88f05455460833cf1c64634a0e791df4b8e0d111ea8be32&scene=0&xtrack=1#rd">利用js文件进行渗透</a></p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/7745">一次敏感信息泄露引发的逻辑漏洞挖掘</a></p>
+<p>工具：</p>
+<p><strong>JSFinder</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Threezh1/JSFinder">https://github.com/Threezh1/JSFinder</a></p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/5390">https://xz.aliyun.com/t/5390</a></p>
+<p>-d 深度爬取，获取更多的内容。-ou, -os来指定URL和子域名所保存的文件名</p>
+<p><code>python3 JSFinder.py -u https://www.sec-wiki.com</code></p>
+<p><code>python3 JSFinder.py -u https://www.sec-wiki.com -d -ou url.txt -os domain.txt</code></p>
+<p>缺点：速度慢，不能批量。</p>
+<p><strong>LinkFinder</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/GerbenJavado/LinkFinder">https://github.com/GerbenJavado/LinkFinder</a></p>
+<p>分析整个域及其JS文件：</p>
+<p><code>python linkfinder.py -i https://example.com -d -o te.html</code></p>
+<p><strong>BurpSuite</strong></p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/5409">https://xz.aliyun.com/t/5409</a></p>
+<h5 id="google-搜索脚本"><a href="#google-搜索脚本" class="headerlink" title="google 搜索脚本"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#google-%E6%90%9C%E7%B4%A2%E8%84%9A%E6%9C%AC" title="google 搜索脚本"></a>google 搜索脚本</h5><p>将google常用的几种搜索方法集中到一个脚本里面。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan/blob/master/FGDS.sh">Fast Google Dorks Scan</a></p>
+<p><code>./FGDS.sh app.starbucks.com</code></p>
+<h5 id="脚本汇总"><a href="#脚本汇总" class="headerlink" title="脚本汇总"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E8%84%9A%E6%9C%AC%E6%B1%87%E6%80%BB" title="脚本汇总"></a>脚本汇总</h5><p>实现的目标：输入一个域名，对其进行子域名枚举，域名存活判断和敏感目录的扫描，最后结合<a target="_blank" rel="noopener" href="https://xray.cool/">xray</a>的基本爬虫进行扫描。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1  <br>2  <br>3  <br>4  <br>5  <br>6  <br>7  <br>8  <br>9  <br>10  <br>11  <br>12  <br>13  <br>14  <br>15  <br>16  <br>17  <br>18  <br>19  <br>20  <br>21  <br>22  <br>23  <br>24  <br>25  <br>26  <br>27  <br>28  <br>29  <br>30  <br>31  <br>32  <br>33  <br>34  <br>35  <br>36  <br>37  <br>38  <br>39  <br>40  <br>41  <br>42  <br>43  <br>44  <br>45  <br>46  <br>47  <br>48  <br>49  <br>50  <br>51  <br>52  <br>53  <br>54  <br>55  <br>56  <br>57  <br>58  <br>59  <br>60  <br>61  <br>62  <br>63  <br>64  <br>65  <br>66  <br>67  <br>68  <br>69  <br>70  <br>71  <br>72  <br>73  <br>74  <br>75  <br>76  <br>77  <br>78  <br>79  <br>80  <br>81  <br>82  <br>83  <br>84  <br>85  <br>86  <br>87  <br>88  <br>89  <br>90  <br>91  <br>92  <br>93  <br>94  <br>95  <br>96  <br>97  <br>98  <br>99  <br>100  <br>101  <br>102  <br>103  <br>104  <br>105  <br>106  <br>107  <br>108  <br>109  <br>110  <br>111  <br>112  <br>113  <br>114  <br>115  <br>116  <br>117  <br>118  <br>119  <br>120  <br>121  <br>122  <br>123  <br>124  <br>125  <br>126  <br>127  <br>128  <br>129  <br>130  <br>131  <br>132  <br>133  <br>134  <br>135  <br>136</td>
+<td>“””  <br>脚本编写目的：  <br>输入一个子域名，首先去获取子域名，去重。  <br>将子域名进行HTTP(S)判断，由于一个域名http(s)都可以访问。再次去重  <br>获取<a target="_blank" rel="noopener" href="http://www.abc.com(被动扫描)/">http://www.abc.com(被动扫描)</a> <a target="_blank" rel="noopener" href="http://www.abc.com(nmap)./">www.abc.com(nmap)。</a>  <br>敏感路径的扫描 BBscan  <br>爬取url+xray  <br>被动扫描 xray  <br>python3 sub.info.py abc.txt  <br>abc.txt 里面是要爬取的域名：baidu.com  <br>“””  <br># -<em>-coding:utf-8 -</em>-  <br>import sys  <br>import  os  <br>  <br>#子域名的获取，输入域名，返回获取到的子域名(3个子域名枚举工具)  <br>def getsubdomain(domain):  <br>    #crt证书  <br>    a = ‘’’curl -s “<a target="_blank" rel="noopener" href="https://crt.sh/?q=%7B0%7D&amp;output=json&quot;">https://crt.sh/?q={0}&amp;output=json&quot;</a> | jq -r ‘.[].name_value’| sed ‘s/*.//g’ | sort -u | tee -a {1}_crt.txt’’’.format(  <br>        domain, domain)  <br>    os.system(a)  <br>    # _amass.txt  <br>    b = ‘amass enum -d {0} -o {1}_amass.txt’.format(domain, domain)  <br>    os.system(b)  <br>  <br>    # _sub.txt  <br>    c = ‘subfinder -d {0} -o {1}_sub.txt’.format(domain, domain)  <br>    os.system(c)  <br>    # # asset  <br>    i = ‘assetfinder {0} | sort -u &gt; {1}_asset.txt’.format(domain, domain)  <br>    os.system(i)  <br>    d = ‘cat {0}_crt.txt {1}_amass.txt {2}_sub.txt {3}_asset.txt | sort | uniq &gt; {4}.txt’.format(domain, domain, domain, domain,domain)  <br>    #d = ‘cat {0}_crt.txt  {1}_asset.txt | sort | uniq &gt; {2}.txt’.format(domain, domain, domain)  <br>    os.system(d)  <br>  <br>    #  <br>    e = ‘rm -rf {0}_crt.txt {1}_amass.txt {2}_sub.txt {3}<em>asset.txt’.format(domain, domain, domain, domain)  <br>    os.system(e)  <br>  <br>    # f = ‘cat {0}.txt | aquatone -chrome-path /root/tools/craw/chrome-linux/chrome’.format(url)  <br>    # os.system(f)  <br>  <br>    # sub takeover  <br>  <br>    g = ‘subjack -w {0}.txt  -t 1000 -o takeover</em>{1}.txt -ssl’.format(domain, domain)  <br>    os.system(g)  <br>  <br>    return “{0}.txt”.format(domain)  <br>  <br>#对域名的二次处理,subdomain 子域名列表（getsubdomain 函数的输出结果）  <br>def http_s(target,subdomain):  <br>    #subdomain = getsubdomain(target)  <br>    hp = ‘cat {0} | httprobe &gt; {1}_http.txt’.format(subdomain,target)  <br>    os.system(hp)  <br>    http = “{}_http.txt”.format(target)  <br>    #b 一个空的列表，用来去重的设置  <br>    b = []  <br>    # 获取<a target="_blank" rel="noopener" href="http://www.abc.com/">http://www.abc.com</a> 跑敏感目录  <br>    qchttp = “{}_qchttp.txt”.format(target)  <br>    qcsdomain = “{}_qcsdomain.txt”.format(target)  <br>    with open(http, ‘r’) as f:  <br>        for i in f:  <br>            domain = (i.strip(‘\n’).split(‘//‘)[1])  <br>            b.append(domain)  <br>            # 向列表b中添加域名，然后判断出现一次的时候，直接把 http(s)://<a target="_blank" rel="noopener" href="http://www.abc.com输出.即使有重复的,只输出一次/">www.abc.com输出。即使有重复的，只输出一次</a>  <br>            if b.count(domain) == 1:  <br>                http_domain = i.strip()  <br>  <br>                with open(qchttp, ‘a+’) as d:  <br>                    d.writelines(http_domain + ‘\n’)  <br>                # 获取 domain   <a target="_blank" rel="noopener" href="http://www.abc.com/">www.abc.com</a>  nmap 跑端口  <br>                with open(qcsdomain, ‘a+’) as d:  <br>                    d.writelines(http_domain.split(‘//‘)[1] + ‘\n’)  <br>  <br>  <br>    return qchttp  <br>  <br>#对获取的域名进行处理，防止扫描到其他未授权的域名 从http_s获取到的结果，和之前输入的域名进行做对比。  <br>#domains 获取到的子域名，dm列表域名  <br>def right_domain(qchttp,domain,dm):  <br>    try:  <br>        qqchttp = “{0}<em>qqchttp.txt”.format(domain)  <br>        with open(dm,’r’) as f:  <br>            for i in f:  <br>                dms = i.strip(‘\n’)  <br>  <br>                with open(qchttp, ‘r’) as g:  <br>                    for d in g:  <br>                        domains = d.strip(‘\n’)  <br>                #print(domains)  <br>  <br>                        if dms in domains:  <br>                            with open(qqchttp, ‘a+’) as d:  <br>                                d.writelines(domains + ‘\n’)  <br>        file = “python BBScan.py -f {0}”.format(qqchttp)  <br>        os.system(file)  <br>    except:  <br>        pass  <br>    return qqchttp  <br>  <br>#扫描的是获取http_s函数输出的结果，作为参数进行调用  <br>def xray(domains):  <br>    #domains = http_s(domain)  <br>    try:  <br>        with open(domains, ‘r’) as f:  <br>            dms = set(f)  <br>            for i in dms:  <br>                print(i)  <br>                url = i.strip(‘\n\t’)  <br>                dm = url.split(‘//‘)[1]  <br>  <br>                try:  <br>                    g = “/root/tools/xary/xray_linux_amd64 webscan –basic-crawler {0} –html-output {1}</em>.html”.format(url,dm)  <br>                    os.system(g)  <br>                except:  <br>                    pass  <br>        return “”  <br>    except:  <br>        pass  <br>      <br>if <strong>name</strong> == ‘<strong>main</strong>‘:  <br>    if len(sys.argv) == 1:  <br>        msg = “””  <br>        src_info.py  <br>        Usage: src_info.py target  <br>            “””  <br>        print(msg)  <br>        sys.exit(0)  <br>    domains = sys.argv[1]  <br>    with open(domains,’r’) as f:  <br>        for i in f:  <br>            domain = i.strip(‘\n’)  <br>            #subdomain = getsubdomain(domain)  <br>            http_domain = right_domain(http_s(domain,getsubdomain(domain)),domain,sys.argv[1])  <br>            #http_s(domain,getsubdomain(domain))  <br>            xray(http_domain)</td>
+</tr>
+</tbody></table>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>
@@ -711,12 +801,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>hackerone挖洞之旅</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">文章标题:</span>信息收集第一章</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">2.2k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
-    <p><span class="copy-title">发布时间:</span>2023-04-13, 14:34:37</p>
-    <p><span class="copy-title">最后更新:</span>2023-04-15, 20:15:06</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/04/13/hackerone%E6%8C%96%E6%B4%9E%E4%B9%8B%E6%97%85/" title="hackerone挖洞之旅">https://sunwu57.github.io/2023/04/13/hackerone%E6%8C%96%E6%B4%9E%E4%B9%8B%E6%97%85/</a>
+    <p><span class="copy-title">发布时间:</span>2023-11-05, 09:48:25</p>
+    <p><span class="copy-title">最后更新:</span>2023-11-05, 09:52:30</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/11/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="信息收集第一章">https://sunwu57.github.io/2023/11/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E7%AC%AC%E4%B8%80%E7%AB%A0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
     </p>

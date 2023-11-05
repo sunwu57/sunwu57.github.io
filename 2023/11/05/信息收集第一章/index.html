@@ -278,7 +278,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="22">
-<input type="hidden" id="yelog_site_word_count" value="29.4k">
+<input type="hidden" id="yelog_site_word_count" value="29.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -651,12 +651,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-11-05 09:52:30'>2023-11-05 09:48</time>
+            发布时间 : <time class="date" title='最后更新: 2023-11-05 10:04:57'>2023-11-05 09:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.2k</span>
+        <span>字数:2.3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -710,34 +710,76 @@
 <p>Go 编写</p>
 <p><code>assetfinder [--subs-only] &lt;domain&gt;</code></p>
 <h5 id="多个子域名枚举工具-子域名托管漏洞验证"><a href="#多个子域名枚举工具-子域名托管漏洞验证" class="headerlink" title="多个子域名枚举工具+ 子域名托管漏洞验证"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E5%A4%9A%E4%B8%AA%E5%AD%90%E5%9F%9F%E5%90%8D%E6%9E%9A%E4%B8%BE%E5%B7%A5%E5%85%B7-%E5%AD%90%E5%9F%9F%E5%90%8D%E6%89%98%E7%AE%A1%E6%BC%8F%E6%B4%9E%E9%AA%8C%E8%AF%81" title="多个子域名枚举工具+ 子域名托管漏洞验证"></a>多个子域名枚举工具+ 子域名托管漏洞验证</h5><p>利用多个子域名枚举工具，将其结果汇总去重，最后检测是否存在子域名托管漏洞。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1  <br>2  <br>3  <br>4  <br>5  <br>6  <br>7  <br>8  <br>9  <br>10  <br>11  <br>12  <br>13  <br>14  <br>15  <br>16  <br>17  <br>18  <br>19  <br>20  <br>21  <br>22  <br>23  <br>24  <br>25  <br>26  <br>27  <br>28  <br>29  <br>30  <br>31  <br>32  <br>33  <br>34  <br>35  <br>36  <br>37</td>
-<td>import sys  <br>import os  <br>  <br>urls = sys.argv[1]  <br>  <br>with open(urls, ‘r’) as f:  <br>    for i in f.readlines():  <br>        url = i.strip(‘\n’)  <br>        print(url)  <br>  <br>        a = ‘’’curl -s “<a target="_blank" rel="noopener" href="https://crt.sh/?q=%7B0%7D&amp;output=json&quot;">https://crt.sh/?q={0}&amp;output=json&quot;</a> | jq -r ‘.[].name_value’| sed ‘s/*.//g’ | sort -u | tee -a {1}_crt.txt’’’.format(url,url)  <br>        os.system(a)  <br>  <br>        # _amass.txt  <br>        b   = ‘amass enum -d {0} -o {1}_amass.txt’.format(url,url)  <br>        os.system(b)  <br>  <br>        #_sub.txt  <br>        c = ‘subfinder -d {0} -o {1}_sub.txt’.format(url,url)  <br>        os.system(c)  <br>        #asset  <br>        i = ‘assetfinder {0} | sort -u &gt; {1}_asset.txt’.format(url,url)  <br>        os.system(i)  <br>        d = ‘cat {0}_crt.txt {1}_amass.txt {2}_sub.txt {3}_asset.txt | sort | uniq &gt; {4}.txt’.format(url,url,url,url,url)  <br>  <br>        os.system(d)  <br>        #  <br>        e = ‘rm -rf {0}_crt.txt {1}_amass.txt {2}_sub.txt {3}<em>asset.txt’.format(url,url,url,url)  <br>        os.system(e)  <br>  <br>       # f = ‘cat {0}.txt | aquatone -chrome-path /root/tools/craw/chrome-linux/chrome’.format(url)  <br>        #os.system(f)  <br>  <br>        # sub takeover  <br>  <br>        g = ‘subjack -w {0}.txt  -t 1000 -o takeover</em>{1}.txt -ssl’.format(url,url)  <br>        os.system(g)</td>
-</tr>
-</tbody></table>
+<pre><code>import sys  
+import os  
+  
+urls = sys.argv[1]  
+  
+with open(urls, &#39;r&#39;) as f:  
+    for i in f.readlines():  
+        url = i.strip(&#39;\n&#39;)  
+        print(url)  
+  
+        a = &#39;&#39;&#39;curl -s &quot;https://crt.sh/?q=&#123;0&#125;&amp;output=json&quot; | jq -r &#39;.[].name_value&#39;| sed &#39;s/\*\.//g&#39; | sort -u | tee -a &#123;1&#125;_crt.txt&#39;&#39;&#39;.format(url,url)  
+        os.system(a)  
+  
+        # _amass.txt  
+        b   = &#39;amass enum -d &#123;0&#125; -o &#123;1&#125;_amass.txt&#39;.format(url,url)  
+        os.system(b)  
+  
+        #_sub.txt  
+        c = &#39;subfinder -d &#123;0&#125; -o &#123;1&#125;_sub.txt&#39;.format(url,url)  
+        os.system(c)  
+        #asset  
+        i = &#39;assetfinder &#123;0&#125; | sort -u &gt; &#123;1&#125;_asset.txt&#39;.format(url,url)  
+        os.system(i)  
+        d = &#39;cat &#123;0&#125;_crt.txt &#123;1&#125;_amass.txt &#123;2&#125;_sub.txt &#123;3&#125;_asset.txt | sort | uniq &gt; &#123;4&#125;.txt&#39;.format(url,url,url,url,url)  
+  
+        os.system(d)  
+        #  
+        e = &#39;rm -rf &#123;0&#125;_crt.txt &#123;1&#125;_amass.txt &#123;2&#125;_sub.txt &#123;3&#125;_asset.txt&#39;.format(url,url,url,url)  
+        os.system(e)  
+  
+       # f = &#39;cat &#123;0&#125;.txt | aquatone -chrome-path /root/tools/craw/chrome-linux/chrome&#39;.format(url)  
+        #os.system(f)  
+  
+        # sub takeover  
+  
+        g = &#39;subjack -w &#123;0&#125;.txt  -t 1000 -o takeover_&#123;1&#125;.txt -ssl&#39;.format(url,url)  
+        os.system(g)
+</code></pre>
 <h5 id="域名存活判断"><a href="#域名存活判断" class="headerlink" title="域名存活判断"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E5%9F%9F%E5%90%8D%E5%AD%98%E6%B4%BB%E5%88%A4%E6%96%AD" title="域名存活判断"></a>域名存活判断</h5><p>HTTP&amp;HTTPS 判断去重</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/tomnomnom/httprobe">https://github.com/tomnomnom/httprobe</a></p>
 <p><code>cat oppo.txt | httprobe &gt; hoppo.txt</code></p>
 <p>获取到的域名可能会有重复的，比如<code>www.abc.com</code> http/https都能访问通。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1  <br>2  <br>3  <br>4  <br>5  <br>6  <br>7  <br>8  <br>9  <br>10  <br>11  <br>12  <br>13  <br>14  <br>15  <br>16  <br>17  <br>18  <br>19  <br>20  <br>21  <br>22  <br>23  <br>24  <br>25  <br>26  <br>27</td>
-<td>import sys  <br>  <br>if len(sys.argv) == 1:  <br>    msg = “””  <br>    unqiue http(s) domain  <br>    Usage: qcdomain.py input output1(<a target="_blank" rel="noopener" href="http://www.abc.com/">http://www.abc.com</a>) output2(<a target="_blank" rel="noopener" href="http://www.abc.com/">www.abc.com</a>)  <br>        “””  <br>    print(msg)  <br>    sys.exit(0)  <br>  <br>domains = sys.argv[1]  <br>qdomains = sys.argv[2]  <br>qdomain = sys.argv[3]  <br>b = []  <br>with open(domains,’r’) as f:  <br>    for i in f:  <br>        domain = (i.strip(‘\n’).split(‘//‘)[1])  <br>        b.append(domain)  <br>        #向列表b中添加域名，然后判断出现一次的时候，直接把 http(s)://<a target="_blank" rel="noopener" href="http://www.abc.com输出.即使有重复的,只输出一次/">www.abc.com输出。即使有重复的，只输出一次</a>  <br>        if b.count(domain) == 1:  <br>            http_domain = i.strip()  <br>            #获取<a target="_blank" rel="noopener" href="http://www.abc.com/">http://www.abc.com</a> 跑敏感目录  <br>            with open(qdomains, ‘a+’) as d:  <br>                d.writelines(http_domain + ‘\n’)  <br>            #获取 domain   <a target="_blank" rel="noopener" href="http://www.abc.com/">www.abc.com</a>  nmap 跑端口  <br>            with open(qdomain, ‘a+’) as d:  <br>                d.writelines(http_domain.split(‘//‘)[1] + ‘\n’)</td>
-</tr>
-</tbody></table>
+<pre><code>import sys  
+  
+if len(sys.argv) == 1:  
+    msg = &quot;&quot;&quot;  
+    unqiue http(s) domain  
+    Usage: qcdomain.py input output1(http://www.abc.com) output2(www.abc.com)  
+        &quot;&quot;&quot;  
+    print(msg)  
+    sys.exit(0)  
+  
+domains = sys.argv[1]  
+qdomains = sys.argv[2]  
+qdomain = sys.argv[3]  
+b = []  
+with open(domains,&#39;r&#39;) as f:  
+    for i in f:  
+        domain = (i.strip(&#39;\n&#39;).split(&#39;//&#39;)[1])  
+        b.append(domain)  
+        #向列表b中添加域名，然后判断出现一次的时候，直接把 http(s)://www.abc.com输出。即使有重复的，只输出一次  
+        if b.count(domain) == 1:  
+            http_domain = i.strip()  
+            #获取http://www.abc.com 跑敏感目录  
+            with open(qdomains, &#39;a+&#39;) as d:  
+                d.writelines(http_domain + &#39;\n&#39;)  
+            #获取 domain   www.abc.com  nmap 跑端口  
+            with open(qdomain, &#39;a+&#39;) as d:  
+                d.writelines(http_domain.split(&#39;//&#39;)[1] + &#39;\n&#39;)
+</code></pre>
 <h5 id="企业组织架构收集信息"><a href="#企业组织架构收集信息" class="headerlink" title="企业组织架构收集信息"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E4%BC%81%E4%B8%9A%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84%E6%94%B6%E9%9B%86%E4%BF%A1%E6%81%AF" title="企业组织架构收集信息"></a><strong>企业组织架构收集信息</strong></h5><p><a target="_blank" rel="noopener" href="https://xin.baidu.com/">百度信用</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.tianyancha.com/">天眼查</a></p>
 <h5 id="公众号-amp-小程序"><a href="#公众号-amp-小程序" class="headerlink" title="公众号&amp;小程序"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E5%85%AC%E4%BC%97%E5%8F%B7-amp-%E5%B0%8F%E7%A8%8B%E5%BA%8F" title="公众号&amp;小程序"></a>公众号&amp;小程序</h5><p><a target="_blank" rel="noopener" href="https://github.com/3stoneBrother/personalTools/blob/master/scripts/gongzhonghao.py">公众号获取</a></p>
@@ -753,18 +795,19 @@
 <p>GET参数</p>
 <p><code>ffuf -w /path/to/paramnames.txt -u https://target/script.php?FUZZ=test_value -fs 4242</code></p>
 <p>对域名批量敏感目录爬取。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1  <br>2  <br>3  <br>4  <br>5  <br>6  <br>7  <br>8  <br>9  <br>10  <br>11  <br>12</td>
-<td>import os  <br>import sys  <br>domain = sys.argv[1]  <br>with open(domain,’r’) as f:  <br>        domains = set(f)  <br>        #num = 51  <br>  <br>        for i in domains:  <br>                url = i.strip(‘\n’)  <br>                domain = url.split(‘//‘)[1]   <br>                a = “ffuf -w ../dict/dict.txt -u {0}/FUZZ  -o {1}.html -of html”.format(url,domain)  <br>                os.system(a)</td>
-</tr>
-</tbody></table>
+<pre><code>import os  
+import sys  
+domain = sys.argv[1]  
+with open(domain,&#39;r&#39;) as f:  
+        domains = set(f)  
+        #num = 51  
+  
+        for i in domains:  
+                url = i.strip(&#39;\n&#39;)  
+                domain = url.split(&#39;//&#39;)[1]   
+                a = &quot;ffuf -w ../dict/dict.txt -u &#123;0&#125;/FUZZ  -o &#123;1&#125;.html -of html&quot;.format(url,domain)  
+                os.system(a)
+</code></pre>
 <h5 id="JS文件"><a href="#JS文件" class="headerlink" title="JS文件"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#JS%E6%96%87%E4%BB%B6" title="JS文件"></a>JS文件</h5><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4MzA4Nzg4Ng==&mid=2247483903&idx=1&sn=0f8b83fb47477d863ad0fd234c7d9baa&chksm=cf4d8e9ef83a0788f645e5c0142db88f05455460833cf1c64634a0e791df4b8e0d111ea8be32&scene=0&xtrack=1#rd">利用js文件进行渗透</a></p>
 <p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/7745">一次敏感信息泄露引发的逻辑漏洞挖掘</a></p>
 <p>工具：</p>
@@ -785,18 +828,143 @@
 <p><a target="_blank" rel="noopener" href="https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan/blob/master/FGDS.sh">Fast Google Dorks Scan</a></p>
 <p><code>./FGDS.sh app.starbucks.com</code></p>
 <h5 id="脚本汇总"><a href="#脚本汇总" class="headerlink" title="脚本汇总"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/05/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%80/#%E8%84%9A%E6%9C%AC%E6%B1%87%E6%80%BB" title="脚本汇总"></a>脚本汇总</h5><p>实现的目标：输入一个域名，对其进行子域名枚举，域名存活判断和敏感目录的扫描，最后结合<a target="_blank" rel="noopener" href="https://xray.cool/">xray</a>的基本爬虫进行扫描。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1  <br>2  <br>3  <br>4  <br>5  <br>6  <br>7  <br>8  <br>9  <br>10  <br>11  <br>12  <br>13  <br>14  <br>15  <br>16  <br>17  <br>18  <br>19  <br>20  <br>21  <br>22  <br>23  <br>24  <br>25  <br>26  <br>27  <br>28  <br>29  <br>30  <br>31  <br>32  <br>33  <br>34  <br>35  <br>36  <br>37  <br>38  <br>39  <br>40  <br>41  <br>42  <br>43  <br>44  <br>45  <br>46  <br>47  <br>48  <br>49  <br>50  <br>51  <br>52  <br>53  <br>54  <br>55  <br>56  <br>57  <br>58  <br>59  <br>60  <br>61  <br>62  <br>63  <br>64  <br>65  <br>66  <br>67  <br>68  <br>69  <br>70  <br>71  <br>72  <br>73  <br>74  <br>75  <br>76  <br>77  <br>78  <br>79  <br>80  <br>81  <br>82  <br>83  <br>84  <br>85  <br>86  <br>87  <br>88  <br>89  <br>90  <br>91  <br>92  <br>93  <br>94  <br>95  <br>96  <br>97  <br>98  <br>99  <br>100  <br>101  <br>102  <br>103  <br>104  <br>105  <br>106  <br>107  <br>108  <br>109  <br>110  <br>111  <br>112  <br>113  <br>114  <br>115  <br>116  <br>117  <br>118  <br>119  <br>120  <br>121  <br>122  <br>123  <br>124  <br>125  <br>126  <br>127  <br>128  <br>129  <br>130  <br>131  <br>132  <br>133  <br>134  <br>135  <br>136</td>
-<td>“””  <br>脚本编写目的：  <br>输入一个子域名，首先去获取子域名，去重。  <br>将子域名进行HTTP(S)判断，由于一个域名http(s)都可以访问。再次去重  <br>获取<a target="_blank" rel="noopener" href="http://www.abc.com(被动扫描)/">http://www.abc.com(被动扫描)</a> <a target="_blank" rel="noopener" href="http://www.abc.com(nmap)./">www.abc.com(nmap)。</a>  <br>敏感路径的扫描 BBscan  <br>爬取url+xray  <br>被动扫描 xray  <br>python3 sub.info.py abc.txt  <br>abc.txt 里面是要爬取的域名：baidu.com  <br>“””  <br># -<em>-coding:utf-8 -</em>-  <br>import sys  <br>import  os  <br>  <br>#子域名的获取，输入域名，返回获取到的子域名(3个子域名枚举工具)  <br>def getsubdomain(domain):  <br>    #crt证书  <br>    a = ‘’’curl -s “<a target="_blank" rel="noopener" href="https://crt.sh/?q=%7B0%7D&amp;output=json&quot;">https://crt.sh/?q={0}&amp;output=json&quot;</a> | jq -r ‘.[].name_value’| sed ‘s/*.//g’ | sort -u | tee -a {1}_crt.txt’’’.format(  <br>        domain, domain)  <br>    os.system(a)  <br>    # _amass.txt  <br>    b = ‘amass enum -d {0} -o {1}_amass.txt’.format(domain, domain)  <br>    os.system(b)  <br>  <br>    # _sub.txt  <br>    c = ‘subfinder -d {0} -o {1}_sub.txt’.format(domain, domain)  <br>    os.system(c)  <br>    # # asset  <br>    i = ‘assetfinder {0} | sort -u &gt; {1}_asset.txt’.format(domain, domain)  <br>    os.system(i)  <br>    d = ‘cat {0}_crt.txt {1}_amass.txt {2}_sub.txt {3}_asset.txt | sort | uniq &gt; {4}.txt’.format(domain, domain, domain, domain,domain)  <br>    #d = ‘cat {0}_crt.txt  {1}_asset.txt | sort | uniq &gt; {2}.txt’.format(domain, domain, domain)  <br>    os.system(d)  <br>  <br>    #  <br>    e = ‘rm -rf {0}_crt.txt {1}_amass.txt {2}_sub.txt {3}<em>asset.txt’.format(domain, domain, domain, domain)  <br>    os.system(e)  <br>  <br>    # f = ‘cat {0}.txt | aquatone -chrome-path /root/tools/craw/chrome-linux/chrome’.format(url)  <br>    # os.system(f)  <br>  <br>    # sub takeover  <br>  <br>    g = ‘subjack -w {0}.txt  -t 1000 -o takeover</em>{1}.txt -ssl’.format(domain, domain)  <br>    os.system(g)  <br>  <br>    return “{0}.txt”.format(domain)  <br>  <br>#对域名的二次处理,subdomain 子域名列表（getsubdomain 函数的输出结果）  <br>def http_s(target,subdomain):  <br>    #subdomain = getsubdomain(target)  <br>    hp = ‘cat {0} | httprobe &gt; {1}_http.txt’.format(subdomain,target)  <br>    os.system(hp)  <br>    http = “{}_http.txt”.format(target)  <br>    #b 一个空的列表，用来去重的设置  <br>    b = []  <br>    # 获取<a target="_blank" rel="noopener" href="http://www.abc.com/">http://www.abc.com</a> 跑敏感目录  <br>    qchttp = “{}_qchttp.txt”.format(target)  <br>    qcsdomain = “{}_qcsdomain.txt”.format(target)  <br>    with open(http, ‘r’) as f:  <br>        for i in f:  <br>            domain = (i.strip(‘\n’).split(‘//‘)[1])  <br>            b.append(domain)  <br>            # 向列表b中添加域名，然后判断出现一次的时候，直接把 http(s)://<a target="_blank" rel="noopener" href="http://www.abc.com输出.即使有重复的,只输出一次/">www.abc.com输出。即使有重复的，只输出一次</a>  <br>            if b.count(domain) == 1:  <br>                http_domain = i.strip()  <br>  <br>                with open(qchttp, ‘a+’) as d:  <br>                    d.writelines(http_domain + ‘\n’)  <br>                # 获取 domain   <a target="_blank" rel="noopener" href="http://www.abc.com/">www.abc.com</a>  nmap 跑端口  <br>                with open(qcsdomain, ‘a+’) as d:  <br>                    d.writelines(http_domain.split(‘//‘)[1] + ‘\n’)  <br>  <br>  <br>    return qchttp  <br>  <br>#对获取的域名进行处理，防止扫描到其他未授权的域名 从http_s获取到的结果，和之前输入的域名进行做对比。  <br>#domains 获取到的子域名，dm列表域名  <br>def right_domain(qchttp,domain,dm):  <br>    try:  <br>        qqchttp = “{0}<em>qqchttp.txt”.format(domain)  <br>        with open(dm,’r’) as f:  <br>            for i in f:  <br>                dms = i.strip(‘\n’)  <br>  <br>                with open(qchttp, ‘r’) as g:  <br>                    for d in g:  <br>                        domains = d.strip(‘\n’)  <br>                #print(domains)  <br>  <br>                        if dms in domains:  <br>                            with open(qqchttp, ‘a+’) as d:  <br>                                d.writelines(domains + ‘\n’)  <br>        file = “python BBScan.py -f {0}”.format(qqchttp)  <br>        os.system(file)  <br>    except:  <br>        pass  <br>    return qqchttp  <br>  <br>#扫描的是获取http_s函数输出的结果，作为参数进行调用  <br>def xray(domains):  <br>    #domains = http_s(domain)  <br>    try:  <br>        with open(domains, ‘r’) as f:  <br>            dms = set(f)  <br>            for i in dms:  <br>                print(i)  <br>                url = i.strip(‘\n\t’)  <br>                dm = url.split(‘//‘)[1]  <br>  <br>                try:  <br>                    g = “/root/tools/xary/xray_linux_amd64 webscan –basic-crawler {0} –html-output {1}</em>.html”.format(url,dm)  <br>                    os.system(g)  <br>                except:  <br>                    pass  <br>        return “”  <br>    except:  <br>        pass  <br>      <br>if <strong>name</strong> == ‘<strong>main</strong>‘:  <br>    if len(sys.argv) == 1:  <br>        msg = “””  <br>        src_info.py  <br>        Usage: src_info.py target  <br>            “””  <br>        print(msg)  <br>        sys.exit(0)  <br>    domains = sys.argv[1]  <br>    with open(domains,’r’) as f:  <br>        for i in f:  <br>            domain = i.strip(‘\n’)  <br>            #subdomain = getsubdomain(domain)  <br>            http_domain = right_domain(http_s(domain,getsubdomain(domain)),domain,sys.argv[1])  <br>            #http_s(domain,getsubdomain(domain))  <br>            xray(http_domain)</td>
-</tr>
-</tbody></table>
+<pre><code>&quot;&quot;&quot;  
+脚本编写目的：  
+输入一个子域名，首先去获取子域名，去重。  
+将子域名进行HTTP(S)判断，由于一个域名http(s)都可以访问。再次去重  
+获取http://www.abc.com(被动扫描) www.abc.com(nmap)。  
+敏感路径的扫描 BBscan  
+爬取url+xray  
+被动扫描 xray  
+python3 sub.info.py abc.txt  
+abc.txt 里面是要爬取的域名：baidu.com  
+&quot;&quot;&quot;  
+# -*-coding:utf-8 -*-  
+import sys  
+import  os  
+  
+#子域名的获取，输入域名，返回获取到的子域名(3个子域名枚举工具)  
+def getsubdomain(domain):  
+    #crt证书  
+    a = &#39;&#39;&#39;curl -s &quot;https://crt.sh/?q=&#123;0&#125;&amp;output=json&quot; | jq -r &#39;.[].name_value&#39;| sed &#39;s/\*\.//g&#39; | sort -u | tee -a &#123;1&#125;_crt.txt&#39;&#39;&#39;.format(  
+        domain, domain)  
+    os.system(a)  
+    # _amass.txt  
+    b = &#39;amass enum -d &#123;0&#125; -o &#123;1&#125;_amass.txt&#39;.format(domain, domain)  
+    os.system(b)  
+  
+    # _sub.txt  
+    c = &#39;subfinder -d &#123;0&#125; -o &#123;1&#125;_sub.txt&#39;.format(domain, domain)  
+    os.system(c)  
+    # # asset  
+    i = &#39;assetfinder &#123;0&#125; | sort -u &gt; &#123;1&#125;_asset.txt&#39;.format(domain, domain)  
+    os.system(i)  
+    d = &#39;cat &#123;0&#125;_crt.txt &#123;1&#125;_amass.txt &#123;2&#125;_sub.txt &#123;3&#125;_asset.txt | sort | uniq &gt; &#123;4&#125;.txt&#39;.format(domain, domain, domain, domain,domain)  
+    #d = &#39;cat &#123;0&#125;_crt.txt  &#123;1&#125;_asset.txt | sort | uniq &gt; &#123;2&#125;.txt&#39;.format(domain, domain, domain)  
+    os.system(d)  
+  
+    #  
+    e = &#39;rm -rf &#123;0&#125;_crt.txt &#123;1&#125;_amass.txt &#123;2&#125;_sub.txt &#123;3&#125;_asset.txt&#39;.format(domain, domain, domain, domain)  
+    os.system(e)  
+  
+    # f = &#39;cat &#123;0&#125;.txt | aquatone -chrome-path /root/tools/craw/chrome-linux/chrome&#39;.format(url)  
+    # os.system(f)  
+  
+    # sub takeover  
+  
+    g = &#39;subjack -w &#123;0&#125;.txt  -t 1000 -o takeover_&#123;1&#125;.txt -ssl&#39;.format(domain, domain)  
+    os.system(g)  
+  
+    return &quot;&#123;0&#125;.txt&quot;.format(domain)  
+  
+#对域名的二次处理,subdomain 子域名列表（getsubdomain 函数的输出结果）  
+def http_s(target,subdomain):  
+    #subdomain = getsubdomain(target)  
+    hp = &#39;cat &#123;0&#125; | httprobe &gt; &#123;1&#125;_http.txt&#39;.format(subdomain,target)  
+    os.system(hp)  
+    http = &quot;&#123;&#125;_http.txt&quot;.format(target)  
+    #b 一个空的列表，用来去重的设置  
+    b = []  
+    # 获取http://www.abc.com 跑敏感目录  
+    qchttp = &quot;&#123;&#125;_qchttp.txt&quot;.format(target)  
+    qcsdomain = &quot;&#123;&#125;_qcsdomain.txt&quot;.format(target)  
+    with open(http, &#39;r&#39;) as f:  
+        for i in f:  
+            domain = (i.strip(&#39;\n&#39;).split(&#39;//&#39;)[1])  
+            b.append(domain)  
+            # 向列表b中添加域名，然后判断出现一次的时候，直接把 http(s)://www.abc.com输出。即使有重复的，只输出一次  
+            if b.count(domain) == 1:  
+                http_domain = i.strip()  
+  
+                with open(qchttp, &#39;a+&#39;) as d:  
+                    d.writelines(http_domain + &#39;\n&#39;)  
+                # 获取 domain   www.abc.com  nmap 跑端口  
+                with open(qcsdomain, &#39;a+&#39;) as d:  
+                    d.writelines(http_domain.split(&#39;//&#39;)[1] + &#39;\n&#39;)  
+  
+  
+    return qchttp  
+  
+#对获取的域名进行处理，防止扫描到其他未授权的域名 从http_s获取到的结果，和之前输入的域名进行做对比。  
+#domains 获取到的子域名，dm列表域名  
+def right_domain(qchttp,domain,dm):  
+    try:  
+        qqchttp = &quot;&#123;0&#125;_qqchttp.txt&quot;.format(domain)  
+        with open(dm,&#39;r&#39;) as f:  
+            for i in f:  
+                dms = i.strip(&#39;\n&#39;)  
+  
+                with open(qchttp, &#39;r&#39;) as g:  
+                    for d in g:  
+                        domains = d.strip(&#39;\n&#39;)  
+                #print(domains)  
+  
+                        if dms in domains:  
+                            with open(qqchttp, &#39;a+&#39;) as d:  
+                                d.writelines(domains + &#39;\n&#39;)  
+        file = &quot;python BBScan.py -f &#123;0&#125;&quot;.format(qqchttp)  
+        os.system(file)  
+    except:  
+        pass  
+    return qqchttp  
+  
+#扫描的是获取http_s函数输出的结果，作为参数进行调用  
+def xray(domains):  
+    #domains = http_s(domain)  
+    try:  
+        with open(domains, &#39;r&#39;) as f:  
+            dms = set(f)  
+            for i in dms:  
+                print(i)  
+                url = i.strip(&#39;\n\t&#39;)  
+                dm = url.split(&#39;//&#39;)[1]  
+  
+                try:  
+                    g = &quot;/root/tools/xary/xray_linux_amd64 webscan --basic-crawler &#123;0&#125; --html-output &#123;1&#125;_.html&quot;.format(url,dm)  
+                    os.system(g)  
+                except:  
+                    pass  
+        return &quot;&quot;  
+    except:  
+        pass  
+      
+if __name__ == &#39;__main__&#39;:  
+    if len(sys.argv) == 1:  
+        msg = &quot;&quot;&quot;  
+        src_info.py  
+        Usage: src_info.py target  
+            &quot;&quot;&quot;  
+        print(msg)  
+        sys.exit(0)  
+    domains = sys.argv[1]  
+    with open(domains,&#39;r&#39;) as f:  
+        for i in f:  
+            domain = i.strip(&#39;\n&#39;)  
+            #subdomain = getsubdomain(domain)  
+            http_domain = right_domain(http_s(domain,getsubdomain(domain)),domain,sys.argv[1])  
+            #http_s(domain,getsubdomain(domain))  
+            xray(http_domain)
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>
@@ -811,10 +979,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>信息收集第一章</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">2.2k</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">2.3k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
     <p><span class="copy-title">发布时间:</span>2023-11-05, 09:48:25</p>
-    <p><span class="copy-title">最后更新:</span>2023-11-05, 09:52:30</p>
+    <p><span class="copy-title">最后更新:</span>2023-11-05, 10:04:57</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/11/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="信息收集第一章">https://sunwu57.github.io/2023/11/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E7%AC%AC%E4%B8%80%E7%AB%A0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。

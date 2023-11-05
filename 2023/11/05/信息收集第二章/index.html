@@ -278,7 +278,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="22">
-<input type="hidden" id="yelog_site_word_count" value="28k">
+<input type="hidden" id="yelog_site_word_count" value="28.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -651,12 +651,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-11-05 09:59:52'>2023-11-05 09:48</time>
+            发布时间 : <time class="date" title='最后更新: 2023-11-05 10:00:29'>2023-11-05 09:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:427</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -675,7 +675,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#waybackurls"><span class="toc-text">waybackurls</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Gau"><span class="toc-text">Gau</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#hakrawler"><span class="toc-text">hakrawler</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#crawlergo"><span class="toc-text">crawlergo</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#awvs"><span class="toc-text">awvs</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -691,7 +691,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>信息收集第二步，获取urls。</p>
+<p>对于一个不懂开发的脚本小子来说，这会很大的影响挖洞效率。那就站在巨人的肩膀上，利用一些大佬开发好的工具，整合一下来达到你想要的效果。</p>
+<h5 id="waybackurls"><a href="#waybackurls" class="headerlink" title="waybackurls"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/06/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%BA%8C-%E7%88%AC%E8%99%AB%E9%93%BE%E6%8E%A5/#waybackurls" title="waybackurls"></a><a target="_blank" rel="noopener" href="https://github.com/tomnomnom/waybackurls">waybackurls</a></h5><p>go语言编写的脚本，主要是调用<a target="_blank" rel="noopener" href="https://web.archive.org/">Wayback Machine</a>接口，爬取互联网上的历史页面。</p>
+<p><code>echo testphp.vulnweb.com | waybackurls</code></p>
+<p><code>echo www.abc.com | waybackurls | grep &quot;\.js&quot; | uniq | sort</code></p>
+<h5 id="Gau"><a href="#Gau" class="headerlink" title="Gau"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/06/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%BA%8C-%E7%88%AC%E8%99%AB%E9%93%BE%E6%8E%A5/#Gau" title="Gau"></a><a target="_blank" rel="noopener" href="https://github.com/lc/gau">Gau</a></h5><p>简介</p>
+<p><strong>getallurls (gau) fetches known URLs from AlienVault’s <a target="_blank" rel="noopener" href="https://otx.alienvault.com/">Open Threat Exchange</a>, the Wayback Machine, and Common Crawl for any given domain. Inspired by Tomnomnom’s <a target="_blank" rel="noopener" href="https://github.com/tomnomnom/waybackurls">waybackurls</a>.</strong></p>
+<p>还是和<a target="_blank" rel="noopener" href="https://github.com/tomnomnom/waybackurls">waybackurls</a>类似，从互联网上获取链接地址。</p>
+<p><code>echo testphp.vulnweb.com | gau</code></p>
+<h5 id="hakrawler"><a href="#hakrawler" class="headerlink" title="hakrawler"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/06/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%BA%8C-%E7%88%AC%E8%99%AB%E9%93%BE%E6%8E%A5/#hakrawler" title="hakrawler"></a><a target="_blank" rel="noopener" href="https://github.com/hakluke/hakrawler">hakrawler</a></h5><p><code>echo testphp.vulnweb.com | hakrawler -all -depth 5 -plain</code></p>
+<h5 id="crawlergo"><a href="#crawlergo" class="headerlink" title="crawlergo"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/06/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%BA%8C-%E7%88%AC%E8%99%AB%E9%93%BE%E6%8E%A5/#crawlergo" title="crawlergo"></a><a target="_blank" rel="noopener" href="https://github.com/0Kee-Team/crawlergo">crawlergo</a></h5><p><strong>crawlergo是一个使用<code>chrome headless</code>模式进行URL入口收集的</strong>动态爬虫<strong>。 使用Golang语言开发，基于<a target="_blank" rel="noopener" href="https://github.com/chromedp/chromedp">chromedp</a> 进行一些定制化开发后操纵CDP协议，对整个页面关键点进行HOOK，灵活表单填充提交，完整的事件触发，尽可能的收集网站暴露出的入口。同时，依靠智能URL去重模块，在过滤掉了大多数伪静态URL之后，仍然确保不遗漏关键入口链接，大幅减少重复任务。</strong></p>
+<p>可以将爬取的结果推送给被动扫描服务器。</p>
+<p><code>./crawlergo -c /root/tools/craw/chrome-linux/chrome -t 20 --push-to-proxy &quot;http://127.0.0.1:7777/</code></p>
+<h5 id="awvs"><a href="#awvs" class="headerlink" title="awvs"></a><a target="_blank" rel="noopener" href="https://www.sec-note.com/2020/06/25/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%BA%8C-%E7%88%AC%E8%99%AB%E9%93%BE%E6%8E%A5/#awvs" title="awvs"></a><a target="_blank" rel="noopener" href="https://www.acunetix.com/vulnerability-scanner/">awvs</a></h5><p>主要是使用awvs的爬虫功能，爬取的链接设置被动扫描代理地址。调用awvs的几个api，进行批量的添加任务，对任务设置代理，然后扫描，最后删除任务。</p>
+<p>参考这个 <a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-808191-1-1.html">AWVS 批量添加扫描/删除任务脚本</a>，添加一个代理函数。</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>
     </div>
@@ -705,10 +720,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>信息收集第二章</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">427</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
     <p><span class="copy-title">发布时间:</span>2023-11-05, 09:48:30</p>
-    <p><span class="copy-title">最后更新:</span>2023-11-05, 09:59:52</p>
+    <p><span class="copy-title">最后更新:</span>2023-11-05, 10:00:29</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/11/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="信息收集第二章">https://sunwu57.github.io/2023/11/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>第二个服务器 | 子夜旅馆</title>
+  <title>kali配置 | 子夜旅馆</title>
   <meta name="keywords" content="">
-  <meta name="description" content="第二个服务器 | 子夜旅馆">
+  <meta name="description" content="kali配置 | 子夜旅馆">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="子夜旅馆">
 <meta property="og:type" content="website">
@@ -658,9 +658,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-第二个服务器" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-kali配置" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">第二个服务器</h1>
+        <h1 class="article-title">kali配置</h1>
     
     <div class="article-meta">
         
@@ -680,12 +680,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-11-03 17:02:10'>2023-11-03 16:59</time>
+            发布时间 : <time class="date" title='最后更新: 2023-11-08 10:58:50'>2023-11-08 10:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:105</span>
+        <span>字数:49</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -704,7 +704,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ESXI%E8%A3%85%E9%BB%91%E7%BE%A4%E6%99%967-2"><span class="toc-text">ESXI装黑群晖7.2</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kali%E5%BC%80%E5%90%AFssh%EF%BC%8Croot%E7%99%BB%E9%99%86"><span class="toc-text">kali开启ssh，root登陆</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#kali%E6%B3%A8%E5%86%8Cmysql"><span class="toc-text">kali注册mysql</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -720,12 +720,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><ol>
-<li>日期: 2023年10月24号 </li>
-<li>型号: 戴尔T630 3.5寸8盘工作站 </li>
-<li>配置: E5-2686V4<em>2 颗 128G内存(单条32G) 4T SAS 12GB传输速度</em>3块 英特尔480GSSD*1块 满盘架带螺丝 H330卡 750W电源 带电源线(装esxi 7.0系统 做RAID5) =8k</li>
-<li>12g4-tstat—-200/块</li>
-<li>32g内存-200/条<h1 id="ESXI装黑群晖7-2"><a href="#ESXI装黑群晖7-2" class="headerlink" title="ESXI装黑群晖7.2"></a>ESXI装黑群晖7.2</h1><a target="_blank" rel="noopener" href="https://github.com/wjz304/rr/releases">群晖镜像</a><br><a target="_blank" rel="noopener" href="https://www.bear20.com/pcwin/239/725956739.html">镜像转化工具</a><br><a href="%E3%80%90%E8%81%8A%E8%81%8A%E7%BE%A4%E6%99%967.2%E7%9A%84%E6%94%B9%E5%8F%98%E5%92%8CESXI%E5%AE%89%E8%A3%85%E9%BB%91%E7%BE%A4%E6%99%967.2%E6%AD%A3%E5%BC%8F%E7%89%88%E3%80%91https://www.bilibili.com/video/BV1Qm4y1v78U?vd_source=4efb7962ebf760b277f3912523347072">镜像安装</a><br>矿神<strong><a target="_blank" rel="noopener" href="https://spk7.imnks.com/">https://spk7.imnks.com/</a></strong></li>
+        <h1 id="kali开启ssh，root登陆"><a href="#kali开启ssh，root登陆" class="headerlink" title="kali开启ssh，root登陆"></a>kali开启<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_64297700/article/details/128766460">ssh</a>，root登陆</h1><ol>
+<li><code>vi /etc/ssh/sshd_config</code><br><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202311081049727.png" alt="image.png"></li>
+<li><code>service ssh restart </code>        重启服务</li>
+<li><code>systemctl enable ssh </code>       开机自启动<h1 id="kali注册mysql"><a href="#kali注册mysql" class="headerlink" title="kali注册mysql"></a>kali注册<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1920635">mysql</a></h1><pre><code>service mysql start
+mysql_secure_installation
+root
+之后遇到需要摁y的摁y，密码输入root即可
+</code></pre>
+</li>
 </ol>
 
       
@@ -740,12 +743,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>第二个服务器</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">105</span></p>
+    <p><span class="copy-title">文章标题:</span>kali配置</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">49</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
-    <p><span class="copy-title">发布时间:</span>2023-11-03, 16:59:20</p>
-    <p><span class="copy-title">最后更新:</span>2023-11-03, 17:02:10</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/11/03/%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="第二个服务器">https://sunwu57.github.io/2023/11/03/%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8/</a>
+    <p><span class="copy-title">发布时间:</span>2023-11-08, 10:34:22</p>
+    <p><span class="copy-title">最后更新:</span>2023-11-08, 10:58:50</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/11/08/kali%E9%85%8D%E7%BD%AE/" title="kali配置">https://sunwu57.github.io/2023/11/08/kali%E9%85%8D%E7%BD%AE/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
     </p>

